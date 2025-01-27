@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDV Python Curriculum</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Optional: Remove link underline and add hover effects */
+        .card-link {
+            text-decoration: none;
+        }
+        .card:hover {
+            transform: scale(1.05); /* Slight zoom effect on hover */
+            transition: transform 0.2s ease-in-out;
+        }
+        /* Custom styles for photo gallery */
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .custom-navbar {
+        margin-top: 0px; /* Space above the navbar */
+        padding-top: 15px; /* Inner spacing for height */
+        padding-bottom: 15px; /* Inner spacing for height */
+        }
+
+        .hero {
+        background: url('assets/images/pcc_cardcovers/box_cloud1.1.png') no-repeat center center/cover;
+        height: 400px; /* Set hero section height */
+        color: white; /* Text color */
+        padding: 50px 20px; /* Top and bottom padding */
+        position: relative;
+        }
+
+        .hero h1, .hero p {
+        font-weight: bold; /* Make text bold */
+        /* -webkit-text-stroke: 1px grey;  Grey text outline (1px width) */
+        color: rgb(255, 255, 255); /* Text fill color */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Optional: subtle shadow for depth */
+        margin: 0; /* Remove default margin */
+        position: relative;
+        z-index: 2; /* Ensures text appears above any overlay */
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2; /* Ensures content appears above the overlay */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar">
+        <div class="container-fluid">
+            <!-- Home Icon -->
+            <a href="index.html" class="home-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                    <path d="M6.5 10.995V14.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-3.505h3.5a.5.5 0 0 0 .5-.5V7.995l-6-5-6 5v6.5a.5.5 0 0 0 .5.5H6.5z"/>
+                </svg>
+            </a>
+            <span class="navbar-brand mb-0 h1 text-white">Gabriel del Valle | Python Creative Curriculum</span>
+        </div>
+        
+    </nav>
+
+     <!-- Hero Section -->
+     <section class="hero d-flex align-items-center justify-content-center text-center text-white">
+        <div class="container">
+            <h1 class="display-3">Teaching Python with Processing</h1>
+            <p class="lead">Expand the knowledge of total beginners with each project</p>
+        </div>
+    </section>
+
+    <!-- Section for Text and Photo Gallery -->
+    <div class="container my-5">
+        <div class="row">
+            
+            <div class="col-md-6 gallery">
+                <img src="assets/images/pcc_cardcovers/dragondance1.png" alt="Photo 2">
+                <img src="assets/images/pcc_cardcovers/pagoda.png" alt="Photo 3">
+                <img src="assets/images/pcc_cardcovers/dragondance2.png" alt="Photo 4">
+                <!-- Add more photos as needed -->
+            </div>
+            <!-- Text Section -->
+            <div class="col-md-6">
+                <h1>Teaching Python Through Processing</h1>
+
+                <h4> A comprehensive curriculum for those starting with no experience!</h4>
+
+                <p>
+                    The core of the processing library is the ability to place shapes on a canvas. 
+                    Approach this simple mechanism with the logical capabilities of python, and it can be expanded out to make dynamic animations, games, and interactive artworks.
+                </p>
+                <p>
+                    I devolped this curriculum when I began teaching Python to students ages 9 - 14 in September of 2023. Presently I teach 2 Python group classes a week and multiple private lessons, often giving rise to new projects which I make to inspire and challenge students.
+                    
+                </p>
+                <p> 
+                    The processing library is supported by Trinket.io, which is a convenient web platform for young coders to store their code on an account they can access from any computer.
+                    Compared to other game oriented libraries like turtles or pygame, which abstract mechanisms such as collisions and animations, the simplicity of processing allows students to construct the logic behind every mechanism.
+                </p>
+                <p>
+                    Through creative coding, math and logic are given a visual form, allowing the results of coding to be intuitively observed. Students enthusiastic about math often have eureka moments, understanding how math works in new ways by seeing its dynamics visualized.
+                    In my experience teaching these projects to a wide variety of students, the visual elements enchant and inspire students to learn, while the games are to them a source of addictive fun and pride. 
+                </p>
+                <h3>
+                    Click the project links below to view their code and interact. 
+                </h3>
+                <h3>
+                    (Many projects are not mobile friendly)
+                </h3>
+
+
+            </div>
+            <!-- Photo Gallery Section -->
+            
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row">
+            <!-- Project 0 Card -->
+            <div class="col-md-4">
+                <a href="firstsketch.html" class="card-link">
+                    <div class="card">
+                        <img src="assets/images/pcc_cardcovers/firstsketch.png" class="card-img-top" alt="P1">
+                        <div class="card-body">
+                            <h5 class="card-title">First Sketch</h5>
+                            <p class="card-text">
+                                <ul>
+                                    <li>What is a coding language?</li>
+                                    <li>Basics of using Processing</li>
+                                    <li>Draw basic shapes</li>
+                                    <li>Colors with RGB</li>
+                                    <li>Dynamic Variation with loops</li>
+                                    <li>First Animation with if-statements</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+
+            
+
+            <!-- Project 1 Card -->
+            <div class="col-md-4">
+                <a href="dreamcatcher.html" class="card-link">
+                    <div class="card">
+                        <img src="assets/images/pcc_cardcovers/dreamcatcher.png" class="card-img-top" alt="P2">
+                        <div class="card-body">
+                            <h5 class="card-title">Dream Catcher</h5>
+                            <p class="card-text">
+                                <ul>
+                                    <li>2D animation (mobile friendly)</li>
+                                    <li>Create, store, and retrieve data using lists</li>
+                                    <li>Circular spinning with sin and cos</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Project 2 Card -->
+            <div class="col-md-4">
+                <a href="solarsystem.html" class="card-link">
+                    <div class="card">
+                        <img src="assets/images/pcc_cardcovers/solarsystem.png" class="card-img-top" alt="P3">
+                        <div class="card-body">
+                            <h5 class="card-title">3D Solar System</h5>
+                            <p class="card-text">
+                                <ul>
+                                    <li>3D animation (mobile friendly)</li>
+                                    <li>Review of lists</li>
+                                    <li>Generate with random numbers</li>
+                                    <li>3D thinking with transformations and rotations</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Project 1 Card -->
+            <div class="col-md-4">
+                <a href="typinggame.html" class="card-link">
+                    <div class="card">
+                        <img src="assets/images/pcc_cardcovers/typinggame.png" class="card-img-top" alt="P4">
+                        <div class="card-body">
+                            <h5 class="card-title">Typing Game</h5>
+                            <p class="card-text">
+                                <ul>
+                                    <li>Easy 2D game, no geometry needed</li>
+                                    <li>Understand lists, strings, and indexes</li>
+                                    <li>else and elif</li>
+                                    <li>Active keyboard inputs</li>
+                                    <li>Display text</li>
+                                    <li>Track time</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Project 3 Card -->
+            <div class="col-md-4">
+                <a href="elastic.html" class="card-link">
+                    <div class="card">
+                        <img src="assets/images/pcc_cardcovers/inertia.png" class="card-img-top" alt="P5">
+                        <div class="card-body">
+                            <h5 class="card-title">Elastic</h5>
+                            <p class="card-text">
+                                <ul>
+                                    <li>Mouse controlled drawing tool (mobile friendly)</li>
+                                    <li>Object Oriented Programming</li>
+                                    <li>Simple physics</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Project 4 Card -->
+            <div class="col-md-4">
+                <a href="rainbowroad.html" class="card-link">
+                    <div class="card">
+                        <img src="assets/images/pcc_cardcovers/rainbowroad.png" class="card-img-top" alt="P6">
+                        <div class="card-body">
+                            <h5 class="card-title">Rainbow Road</h5>
+                            <p class="card-text">
+                                <ul>
+                                    <li>Full 3D game, keyboard controlled</li>
+                                    <li>Object Oriented Programming</li>
+                                    <li>Save highscore to local files</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+             <!-- Project 5 Card -->
+            <div class="col-md-4">
+                <a href="gridwave.html" class="card-link">
+                    <div class="card">
+                        <img src="assets/images/pcc_cardcovers/gridwave.png" class="card-img-top" alt="P7">
+                        <div class="card-body">
+                            <h5 class="card-title">Grid Wave</h5>
+                            <p class="card-text">
+                                <ul>
+                                    <li>3D animation (mobile friendly)</li>
+                                    <li>Nested loops</li>
+                                    <li>Interact with sin function</li>
+                                    <li>Color Interpolation</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Project 6 Card -->
+            <div class="col-md-4">
+                <a href="amoebashooter.html" class="card-link">
+                    <div class="card">
+                        <img src="assets/images/pcc_cardcovers/amoebashooter.png" class="card-img-top" alt="P8">
+                        <div class="card-body">
+                            <h5 class="card-title">Amoeba Shooter</h5>
+                            <p class="card-text">
+                                <ul>
+                                    <li>Full 2D game</li>
+                                    <li>Object Oriented Programming</li>
+                                    <li>Aim, move, and shoot with mouse </li>
+                                    <li>Move game space relative to player with keyboard</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Project 7 Card -->
+            <div class="col-md-4">
+                <a href="gravitybubbles.html" class="card-link">
+                    <div class="card">
+                        <img src="assets/images/pcc_cardcovers/gravitybubbles.png" class="card-img-top" alt="P9">
+                        <div class="card-body">
+                            <h5 class="card-title">Gravity Bubbles</h5>
+                            <p class="card-text">
+                                <ul>
+                                    <li>3D game</li>
+                                    <li>Object Oriented Programming</li>
+                                    <li>Vector movement for projectiles in 3D space</li>
+                                    <li>Create random coordinates on surface of a sphere</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+
+            <!-- Project 8 Card -->
+            <div class="col-md-4">
+                <a href="3Dobjloader.html" class="card-link">
+                    <div class="card">
+                        <img src="assets/images/pcc_cardcovers/3Dcar.png" class="card-img-top" alt="P10">
+                        <div class="card-body">
+                            <h5 class="card-title">3D Obj Loader</h5>
+                            <p class="card-text">
+                                <ul>
+                                    <li>System to render 3D obj files in processing</li>
+                                    <li>Linked datasets</li>
+                                    <li>Geometric concepts of verticies and faces</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Add more cards for other projects -->
+        </div>
+    </div>
+
+    <footer class="bg-dark text-center text-white py-3">
+        © 2025 Gabriel del Valle Python Creative Curriculum
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

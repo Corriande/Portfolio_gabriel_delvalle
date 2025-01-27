@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elastic</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+        .home-icon {
+            text-decoration: none;
+            color: white;
+        }
+        .home-icon:hover {
+            color: #ffcc00; /* Highlight color for hover */
+        }
+
+
+        h1 {
+            margin-top: 50px; /* Larger space above h1 */
+            margin-bottom: 40px; /* Larger space below h1 */
+        }
+
+        h2 {
+            margin-top: 50px; /* Smaller space above h2 */
+            margin-bottom: 30px; /* Smaller space below h2 */
+        }
+
+        p {
+            margin-top: 30px; /* Smaller space above h2 */
+            margin-bottom: 30px; /* Smaller space below h2 */
+        }
+
+        .no-bullets {
+            list-style-type: none; /* Removes bullet points */
+            padding-left: 20px;    /* Adds indentation */
+            margin: 0;             /* Removes default margin */
+        }
+
+        .no-bullets li {
+            margin-bottom: 5px;    /* Adds spacing between list items */
+        }
+
+        .indented-text {
+        display: block;     /* Ensures each span starts on a new line */
+        text-indent: 20px;  /* Indents the text */
+        margin-bottom: 0px; /* Optional: Adds spacing between items */
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!-- Home Icon -->
+            <a href="cc_curriculum.html" class="home-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                    <path d="M6.5 10.995V14.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-3.505h3.5a.5.5 0 0 0 .5-.5V7.995l-6-5-6 5v6.5a.5.5 0 0 0 .5.5H6.5z"/>
+                </svg>
+            </a>
+            <span class="navbar-brand ms-3">P5</span>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h1 class="text-center">Elastic</h1>
+        <p class="text-center">
+            To interact with this project, move and spin your mouse on the canvas.<br>
+            Click the mouse on the canvas to get a new palete of random colors.
+        </p>
+        <!-- Hardcoded iframe for Project 2 -->
+        <iframe src="https://trinket.io/embed/python/868cd3f9c3d9" 
+            width="100%" 
+            height="600" 
+            frameborder="0" 
+            marginwidth="0" 
+            marginheight="0" 
+            allowfullscreen>
+        </iframe>
+        <h2>Elastic Introduces Object Oriented Programming</h2>
+        <p>
+            Many kinds of coding projects require us to make several copies of the same code which behave the same but store and act on different data values. For example, user accounts on a website, or enemies in a video game.<br><br>
+            Each account a users on a website create are distinct entities that behave the same but store different values.<br><br>
+            Each creeper in Minecraft behaves the same but has a different location and different states of action, such as wandering or attacking the player, which can be turned on or off.<br><br>
+            In both of these cases, we want the code to be able to generate a new user account or new creeper on its own when the situation calls for it.<br><br>
+
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/elastic/OOP_p1.png" alt="Creeper OOP" class="img-fluid rounded">
+        </div>
+        <p>
+
+            Object Oriented Programming <strong>(OOP)</strong> allows us to structure our code to efficiently create intricate projects with many moving parts and unique entities. <strong>Python is one of many Object Oriented coding languages.</strong>
+            Others include C++, C#, Java, JavaScript, Swift, and R. <br><br>
+            An example of a language that is not Object Oriented is C, because it is a very <strong>low level language</strong>, not meaning it is easier or less useful (quite the contrary) but rather that it is structured closer to how computers operate rather than what is convenient to humans.<br><br>
+
+            <code>Objects</code> are the unique entities we generate that can store their own unique values and can execute their own unique actions. <strong>A <code>Class</code> is a template for an <code>object</code></strong>, where we define what variables and functions 
+            all the objects made from that class will have.
+
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/elastic/OOP_p2.png" alt="Class Object Structure" class="img-fluid rounded">
+        </div>
+        <p>
+            Notice in the image above how when we are coding a class, the variables or functions that an object will <strong>inherit</strong> are denoted by the prefix <code>self.</code> and we access these <strong>inherited</strong> functions and variables for each object using the prefix <code>object_name.</code>
+        </p>
+
+        <h2>Mouse Movement and Simple Physics Simulation</h2>
+        <p>
+            Before we set up a class to make as many moving circles as we'd like, let's start with the movement mechanics that will be used for this project. Once we've seen how to do this without OOP we can add the mechanism to a class to scale our code up for a mesmerizing result!<br><br>
+
+            
+            These two values exist in the draw function:<br>
+            <code>mouse.x</code> gives you the X position of the mouse on the canvas<br>
+            <code>mouse.y</code> gives you the Y position of the mouse on the canvas<br>
+            <code>ellipse(mouse.x, mouse.y, 50, 50)</code> draws a circle that follows your mouse on the canvas perfectly.<br><br>
+
+            The following code is all it takes to make a circle follow your mouse.
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/elastic/move_circle.png" alt="Circle follows mouse code" class="img-fluid rounded">
+        </div>
+        <p>
+            But we don't want the circle to follow our mouse perfectly. We want it to bounce with elasticity in response the mouse movements, like the circle were attached to the mouse by a rubber band.<br><br>
+
+            <strong>This project introduces the concept of coding velocity</strong>, which is simple but useful for the creation of all kinds of moving objects.<br><br>
+
+            Velocity represents both speed and direction.<br><br>
+
+            OOP allows us to give each object its own values for velocity on the X axis and velocity on the Y axis (In 2D).<br>
+            We move objects in 2D by updating their X and Y positions with their velocities. For example, if velocity X is <code>vx</code>:<br><br>
+
+            <code>obj.vx = 5</code><br>
+            <code>obj.x += obj.vx</code><br>
+            This will cause obj to move to the right.<br>
+            If the value of <code>obj.vx</code> were 1 it would move in the same direction but slower.<br><br>
+
+            If we want the object to reverse its direction, like to bounce off of a wall, we can simply reverse the velocity:<br><br>
+
+            <code>obj.vx *= -1</code><br><br>
+
+            With this change the object will now move to the left at the same speed it was moving to the right because now <code>obj.vx</code> equals -5.<br><br>
+
+            <code>*=</code> is like <code>+=</code> but instead of adding a value to a variable it multiplies the value of a variable.<br><br>
+
+            The interactive code below demonstrates how the simple physics will work before we structure it with OOP:
+        </p>
+        <iframe src="https://trinket.io/embed/python/2754f169cec9"
+            width="100%" 
+            height="600" 
+            frameborder="0" 
+            marginwidth="0" 
+            marginheight="0" 
+            allowfullscreen>
+        </iframe>
+        <p>
+            Subtracting <code>mouse.x - x</code> gives us both the distance between the mouse and the circle on the X axis (the absolute value) and the direction the circle must travel to reach the mouse based on the sign of the value (positive or negative).<br><br>
+
+            For example, if our circle is on the right side of the screen with an X of 300 and the mouse is on the left side of the screen with an X of 100:
+            <code>dx = 100 - 300</code> which gives us -200.<br>
+            Based on the negative sign we know the circle must travel to the left to reach the mouse.<br><br>
+
+            <code>vx += dx * 0.1</code> adds a tenth of the distance to <code>vx</code>.<br>
+            If <code>vx</code> was positive before because the circle was following the mouse to the right, adding this negative value will decrease the velocity, slowing the circle's rightward movement, until <code>vx</code> is 0 (unmoving), and then grows in the negative direction, causing the circle to bounce towards the mouse.<br><br>
+
+            Whenver we move the mouse, acceleration occurs as we are increasing the rate of speed based on the distance with <code>vx += dx * 0.1</code>. As the circle grows closer to the mouse it decelerates. This is partly because <code>dx</code> grows smaller as the circle approaches the mouse, but this alone is not enough to shrink the velocity to 0. If <code>vx = -20</code> and <code>dx = 0</code> (distance = 0) the circle will overshoot the mouse and keep moving to the left.
+            When the circle overshoots the mouse moving to the left, the distance in the positive direction will continue to grow, causing the circle to spring back to the right. <br><br>
+
+            To see this effect, add a hash tag before the two following lines of code in the interactive code above to disable them and see how the circle is unable to stop moving, able only to accelerate, springing forwards and backwards around the mouse even if the mouse is not moving: <br><br>
+
+            <code># vx *= elastic</code><br>
+            <code># vy *= elastic</code><br><br>
+
+            It's these two lines of code above which allow the circle to decelerate and eventually reach the mouse, by dampening the velocity of the circle, shrinking the velocities towards 0 at a rate determined by the value of <code>elastic</code>, which for this effect can be any value less than 1 and greater than 0.<br><br>
+            The greater the value of elastic, the more the circle will bounce and swing. This is because an <code>elastic</code> value of 0.5 will decelerate the velocity to 0 faster than a value of 0.9 using <code>vx *= elastic</code>.<br><br>
+
+            <strong>Try changing the value of <code>elastic</code> in the interactive code above and see what different values do.</strong>
+
+            
+        </p>
+        <h4>Class Structure and Defining Objects</h4>
+        <iframe src="https://trinket.io/embed/python/041d4b31e26a"
+            width="100%" 
+            height="600" 
+            frameborder="0" 
+            marginwidth="0" 
+            marginheight="0" 
+            allowfullscreen>
+        </iframe>
+        <p>
+            In the interactive code above you can see that we've defined a class <code>Circle</code> (the capital letter for a class is a common convention).<br><br>
+            
+            Inside the class there are three functions:<br>
+            One to draw the circle in its given position,<br>
+            one to move the position of the circle,<br>
+            and then <code>__init__</code> (with two underscores on each side).<br><br>
+
+            <code>__init__</code> is the function that generates an object from the class. "init" stands for <strong>initialization</strong>. This function is called when we create a new object, such as in the code below, where three different objects of the <code>Circle</code> class are defined, <code>c1</code>, <code>c2</code>, <code>c3</code>.<br><br>
+            
+            (Note, In the code above the objects are defined in the setup function because <code>color()</code> is itself a class imported from Processing, that gives us a color object. Because it's imported from Processing, <code>color()</code> must be called inside of either <code>setup()</code> or <code>draw()</code>.)
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/elastic/elastic_p1.png" alt="initialize objects" class="img-fluid rounded">
+        </div>
+        <p>
+           When defining the objects in the code above, if we were to not include the inputs when initializing the objects by leaving the parentheses empty, then we would get an error like so:
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/elastic/elastic_p2.png" alt="input arguments" class="img-fluid rounded">
+        </div>
+        <p>
+            When we defined <code>__init__(self, elastic, color)</code> we specified that the function expects two inputs, <code>elastic</code> and <code>color</code>. The function won't execute if not given the number of inputs or in other words <code>arguments</code> specified.<br><br>
+
+            We can also see from the error that reads <code>__init__() takes atleast 3 arguments (1 given)</code> that even though <code>self</code> is an expected argument, we don't need to input it when generating an object. This is because <strong><code>self</code> represents the object itself.</strong>
+            Notice how <code>self</code> is also input into to the functions <code>dispay(self)</code> and <code>move(self, mx, my)</code>. This allows these functions to access the values of variables like <code>self.x</code> which were defined in <code>__init__</code>. <br><br>
+            
+            This is the key to why we redefine the values we input when initializing the function like so:<br>
+            <code>self.elastic = elastic</code><br>
+            While <code>elastic</code>, as an input to __init__, is only available to the __init__ function, <code>self.elastic</code> or any value with the prefix <code>self.</code> can be accessed by any function in the class with <code>self</code> as an argument.
+        </p>
+        <h4>Activating Object Functions</h4>
+        <p>
+            <strong>Only once we've defined an object from the class <code>Circle</code> can we call on the functions inside the class.</strong> To do so, we refer to each object by its name, activating the function that belongs to a specific object.
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/elastic/elastic_p3.png" alt="activate object functions" class="img-fluid rounded">
+        </div>
+
+        <p>
+            In the code above again we see that we must provide two inputs for <code>move()</code> because we specified two inputs when defining the function.
+        </p>
+
+        <h4>From Swinging Circles to Drawing Trails</h4>
+        <p>
+
+            Trying removing the following line of code from the ineractive code above and see what happens:<br>
+            <code>background(0)</code><br><br>
+
+            Now the circle leaves a trail on the canvas wherever you move it!<br>
+            Why?<br>
+            All <code>background(0)</code> does is draw a black rectange the size of the canvas over the canvas. As the draw function loops, when this is the first command called, it effectively covers up whatever was the previous drawing left on the canvas, clearing the slate. If we don't include <code>background()</code>, whatever we draw on the canvas will accumulate.
+        </p>
+        <h4>Generating Objects Automatically</h4>
+        <p>
+            In the interactive code above, we defined three objects by name. These names are needed so we can refer to the functions or values of a specific object. However, if we wanted to generate 100 circles, defining and activing each would be laborious. <strong>There's a better way!</strong><br><br>
+
+            While we still need a way to refer to each unique object similar to a name, we can use the index of a list to do this. Start with an empty list, and add as many objects to the list as you like using <code>append()</code> (which adds an item to the end of a list).<br><br>
+
+            Note, In the code below <code>color</code> was removed as an input for the class, and <code>self.c</code> was set to a random color in <code>__init__</code> by calling <code>self.c = color(random(255), random(255), random(255))</code>
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/elastic/elastic_p4.png" alt="generate a list of objects" class="img-fluid rounded">
+        </div>
+        <p>
+            In the code above we are also generating a random <code>elastic</code> value with a minimum of 0.65 and a max of 0.95. Each unique <code>elastic</code> value will make each circle move in a unique way in response to the mouse.<br><br>
+
+            Next, to activate the <code>move()</code> and <code>display()</code> function of each object, we can use a for-loop to iterate through each item in the list <code>circles</code>, where the temporary variable (in this case <code>circ</code> but it could have any name) will represent each object in the list:
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/elastic/elastic_p5.png" alt="activate a list of objects" class="img-fluid rounded">
+        </div>
+        <h4>Color Reshuffle</h4>
+        <p>
+            Since this project introduces mouse movements it's also a nice opportunity to introduce mouse clicks. Processing allows us to define a funciton <code>mouseClicked()</code> which activates whenever the mouse clicks on the canvas.
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/elastic/elastic_p6.png" alt="mouse click" class="img-fluid rounded">
+        </div>
+        <p>
+            In the code above <code>new_colors</code> will be set to True when you click the mouse. In the code below, in the loop that cycles through each object in <code>circles</code>, if <code>new_colors</code> is True, will change the color value stored in each object as <code>obj.c</code> and redefine it as a new random color.<br><br>
+
+            This demonstrates how you can also access and change the vaules of the variables stored in a class using <code>obj_name.var_name</code>.<br><br>
+
+            Once all the objects in <code>circles</code> have been processed, <code>new_colors</code> is set back to False so that the colors only reshuffle again if you click again.
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/elastic/elastic_p7.png" alt="shuffle colors of each object" class="img-fluid rounded">
+        </div>
+        <p>
+            <strong>A fun note on boolean variables:</strong><br>
+            It's common knowledge that computers work with electricity and make calculations or store information in <strong>binary</strong> with 0's and 1's. A boolean variable is the most basic kind of information a computer can store. Its value can be either <code>True</code> or <code>False</code>. In other words, <code>1</code> or <code>0</code>, or if you think of a light switch, <code>On</code> or <code>Off</code>. A <strong>transistor</strong> is like a tiny light switch that stores information and performs calculations inside a computer. Modern computers have many billions of transistors. Transistors either have electricity flowing in them or not, 
+            in other words, they are either <code>On</code> or <code>Off</code>, <code>1</code> or <code>0</code>, <code>True</code> or <code>False</code>.<br><br>
+
+            <strong>Congratulations on creating an OOP project! This gives you the knowledge you need to make more intricate and efficiently structured games!</strong>
+        </p>
+        
+
+
+
+    </div>
+
+    <footer class="bg-dark text-center text-white py-3">
+        © 2025 Gabriel del Valle Python Creative Curriculum
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+

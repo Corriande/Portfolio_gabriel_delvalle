@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDV Data Science</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Optional: Remove link underline and add hover effects */
+        .card-link {
+            text-decoration: none;
+        }
+        .card:hover {
+            transform: scale(1.05); /* Slight zoom effect on hover */
+            transition: transform 0.2s ease-in-out;
+        }
+        /* Custom styles for photo gallery */
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .custom-navbar {
+        margin-top: 0px; /* Space above the navbar */
+        padding-top: 15px; /* Inner spacing for height */
+        padding-bottom: 15px; /* Inner spacing for height */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar">
+        <div class="container-fluid">
+            <!-- Home Icon -->
+            <a href="index.html" class="home-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                    <path d="M6.5 10.995V14.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-3.505h3.5a.5.5 0 0 0 .5-.5V7.995l-6-5-6 5v6.5a.5.5 0 0 0 .5.5H6.5z"/>
+                </svg>
+            </a>
+            <span class="navbar-brand mb-0 h1">Gabriel del Valle | Data Science Projects</span>
+        </div>
+    </nav>
+
+
+    <div class="container my-5">
+        <div class="row">
+            <!-- Project 1 Card -->
+            <div class="col-md-4">
+                <a href="https://nycdatascience.com/blog/student-works/nyc-animated-traffic-maps-and-branch-analysis/?aiEnableCheckShortcode=true" class="card-link">
+                    <div class="card">
+                        <img src="assets/images/ds_cardcovers/map_bar.png" class="card-img-top" alt="P1">
+                        <div class="card-body">
+                            <h5 class="card-title">NYC Animated Traffic Map and Branch Analysis</h5>
+                            <p class="card-text">
+                                <ul>
+                                    <li>Study of the 2024 Manhattan Congestion Zone policy</li>
+                                    <li>NYC Open Data and Python</li>
+                                    <li>Custom Geojson maps</li>
+                                    <li>Predicting traffic distribution with branch analysis</li>
+                                    <li>Network graphs to identify integral data</li>
+                                    <li>Directional street markers</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Project 2 Card -->
+            <div class="col-md-4">
+                <a href="https://nycdatascience.com/blog/student-works/clustering-artworks-by-ai-quantified-visual-qualities-content-recommendation-app/" class="card-link">
+                    <div class="card">
+                        <img src="assets/images/ds_cardcovers/artcluster.png" class="card-img-top" alt="P1">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Clustering Artworks by Ai-Quantified Visual Qualities & Content Recommendation App</h5>
+                            <p class="card-text">
+                                <ul>
+                                    <li>Interactive Shiny app with R</li>
+                                    <li>Webscraped public domain artworks analyzed with CLIP image classification</li>
+                                    <li>Predicting user preference with cosine similiarity</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Project 3 Card -->
+            <div class="col-md-4">
+                <a href="grownyc_map.html" class="card-link">
+                    <div class="card">
+                        <img src="assets/images/ds_cardcovers/grownyc_map1.png" class="card-img-top" alt="P1">
+                        <div class="card-body">
+                            <h5 class="card-title">Custom maps for GrowNYC</h5>
+                            <p class="card-text">
+                                <ul>
+                                    <li>Geojson Maps of NYC with script to draw outlines of boroughs</li>
+                                    <li>Mark different kinds of outreach locations</li>
+                                    <li>Creating an interactive webapp for GrowNYC to easily customize</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Add more cards for other projects -->
+        </div>
+    </div>
+
+    <footer class="bg-dark text-center text-white py-3">
+        © 2025 Data Science Portfolio
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

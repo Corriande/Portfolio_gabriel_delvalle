@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Wave</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+        .home-icon {
+            text-decoration: none;
+            color: white;
+        }
+        .home-icon:hover {
+            color: #ffcc00; /* Highlight color for hover */
+        }
+
+
+        h1 {
+            margin-top: 50px; /* Larger space above h1 */
+            margin-bottom: 40px; /* Larger space below h1 */
+        }
+
+        h2 {
+            margin-top: 50px; /* Smaller space above h2 */
+            margin-bottom: 30px; /* Smaller space below h2 */
+        }
+
+        p {
+            margin-top: 30px; /* Smaller space above h2 */
+            margin-bottom: 30px; /* Smaller space below h2 */
+        }
+
+        .no-bullets {
+            list-style-type: none; /* Removes bullet points */
+            padding-left: 20px;    /* Adds indentation */
+            margin: 0;             /* Removes default margin */
+        }
+
+        .no-bullets li {
+            margin-bottom: 5px;    /* Adds spacing between list items */
+        }
+
+        .indented-text {
+        display: block;     /* Ensures each span starts on a new line */
+        text-indent: 20px;  /* Indents the text */
+        margin-bottom: 0px; /* Optional: Adds spacing between items */
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!-- Home Icon -->
+            <a href="cc_curriculum.html" class="home-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                    <path d="M6.5 10.995V14.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-3.505h3.5a.5.5 0 0 0 .5-.5V7.995l-6-5-6 5v6.5a.5.5 0 0 0 .5.5H6.5z"/>
+                </svg>
+            </a>
+            <span class="navbar-brand ms-3">P7</span>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h1 class="text-center">Grid Wave</h1>
+        <!-- Hardcoded iframe for Project 2 -->
+         <p class="text-center">
+            <ul>
+                <li>Learn the logic of nested loops in 3D step by step</li>
+                <li>Apply and visualize the <strong>Sine</strong> function for intuitive understanding</li>
+                <li>Blend colors with interpolation</li>
+            </ul>
+         </p>
+        <iframe src="https://trinket.io/embed/python/49c49d3bddd4" 
+            width="100%" 
+            height="600" 
+            frameborder="0" 
+            marginwidth="0" 
+            marginheight="0" 
+            allowfullscreen>
+        </iframe>
+        <h2>Construct the Logic of Nested Loops and Apply Sine</h2>
+        <p>
+            A <strong>nested loop</strong> is useful any time we want to create a 2D grid structure. For example, to draw a chessboard in 3D, or to create a dataset. The logic of rows and columns is fundamental to working with data. The logic of nested loops allows us to navigate and control these structures efficiently.<br><br>
+
+            In the section below I'll guide you through the logic of a nested loop, illustrating how it groups through rows and columns using lines of cubes.
+        </p>
+        <h4>Rows and Columns with Nested Loops</h4>
+        <p>
+            Let's start with a single cube. In the code below it's been translated to the left side to make room for the cubes we will add with a single loop in the next step. It has also been rotated so that you can see that it is a cube.
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/gridwave/nestedloop_p1.png" alt="start with a cube" class="img-fluid rounded">
+        </div>
+        <p>
+            In the code below we've added a single loop, where we defined a variable <code>x = i * 50</code>, which will be used to offset each cube on the X axis so that each is spread 50 pixels apart. The width of each cube is 50 pixels so the cubes should be perfectly lined up...<br><br>
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/gridwave/nestedloop_p2.png" alt="a broken line of cubes" class="img-fluid rounded">
+        </div>
+        <p>
+            But we can see in the image below that there are growing spaces between each cube, even though we only offset by 50 each time:<br>
+            <code>x = 0 * 50</code> offsets by 0<br>
+            <code>x = 1 * 50</code> offsets by 50<br>
+            <code>x = 2 * 50</code> offsets by 100, and so on...<br><br>
+
+            To get the root of this issue recall that each time we use <code>translate()</code> to place an object in 3D we are effectively moving the <strong>origin (point 0, 0, 0)</strong>.<br><br>
+
+            Thus the offsets grow larger because the origin is not moving 50 pixels relative to the last drawn cube, but being offset by the sum of all cubes before it. We can fix this issue by placing each movement within <code>pushMatrix()</code> and <code>popMatrix()</code> which will restore the origin to where it was before the use of <code>translate()</code>.<br><br>
+
+            Later on we'll use this application of <code>pushMatrix()</code> and <code>popMatrix()</code> as a logical puzzle to test the logic of nested loops.
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/gridwave/nestedloop_p3.png" alt="a line of cubes" class="img-fluid rounded">
+        </div>
+        <p>
+            So we've made a single line of cubes using a loop, moving each cube to the right to construct a line. Now what should we do to make a grid, like a chessboard?<br><br>
+
+            <strong>Just like we moved each cube to the right to make a line, we can move each line up to make a grid.</strong> The unit that draws the line is the for-loop itself, so to move each line in an interval like we moved each cube, we can put this list in a list.
+        </p>
+        <iframe src="https://trinket.io/embed/python/4cfcd8dd0101"
+         width="100%" 
+         height="600" 
+         frameborder="0" 
+         marginwidth="0" 
+         marginheight="0" 
+         allowfullscreen>
+        </iframe>
+        <p>
+            In the interactive code above, we see the same problem we saw before where the offset between lines of cubes is accumulating. We know we need to encapsulate the transformation with <code>pushMatrix()</code> and <code>popMatrix()</code>, but where in the nested loop should they go?
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/gridwave/nestedloop_p4.png" alt="a grid of cubes" class="img-fluid rounded">
+        </div>
+        <p>
+            Notice how in the code above, to place the second <code>popMatrix()</code> outside of the inner loop we move it backwards to align it with the first letter in <code>for i in range(10)</code>.<br><br>
+
+            The <code>pushMatrix()</code> and <code>popMatrix()</code> that have been added to form the grid encapsulate the entire inner loop, which represents the drawing of a single line. It also encapsulates the translation <code>translate(0, y, 0)</code> that offsets each line on the Y axis.<br><br>
+
+            Constructing a grid like we have so far allows us to see the relationships between rows and columns.<br><br>
+            Each row is a line of columns.<br>
+            Each column is lined up in a stack of rows.<br>
+            Each <code>i</code> value gives us a <strong>column</strong>.<br>
+            Each <code>j</code> position gives us a <strong>row</strong>.<br>
+            Specific <code>i</code> and <code>j</code> values together gives us a specific cube.<br><br>
+
+            So how many cubes are in the grid?<br>
+            We drew a line of 10 cubes.<br>
+            And staked 10 lines.<br>
+            10 * 10 = 100, which is no coincidence since we've constructed a square. <br><br>
+            
+            <strong>In the next section we'll construct the grid more efficiently using features of the range function.<br><br>
+
+            But first here are some ways to visualize the logic of rows and columns using color:</strong>
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/gridwave/nestedloop_p5.png" alt="rows and columns colored" class="img-fluid rounded">
+        </div>
+        <p>
+            In the code above a single column was selected with <code>if i == 2</code> and a single row selected with <code>if j == 5</code><br><br>
+
+            In the selected column the cubes are shaded based on their row.<br>
+            In the selected row the cubes are shaded based on their column.
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/gridwave/nestedloop_p6.png" alt="colored by row and columns" class="img-fluid rounded">
+        </div>
+        <p>
+            In the code above each cube is colored by both its row and its column.<br>
+            As <code>x</code> increases cubes get less red.<br>
+            As <code>y</code> increases cubes get less blue.<br>
+            The darkest region is where <code>x</code> and <code>y</code> are both at their max.
+        </p>
+        <h4>Efficient Nested Loop with <code>range()</code></h4>
+        <iframe src="https://trinket.io/embed/python/35d7552a7764"
+         width="100%" 
+         height="600" 
+         frameborder="0" 
+         marginwidth="0" 
+         marginheight="0" 
+         allowfullscreen>
+        </iframe>
+        <p>
+            The interactive code above constructs a grid using a nested loop just like we did before, but does so much more cleanly.<br><br>
+
+            Rather than program an offset using <code>x = i * cube_width</code>, the range function has been used to make the temporary variables of the nested loop, <code>x</code> and <code>z</code>, the values we need for the offset.<br><br>
+
+            If you input 1 value into <code>range()</code> like <code>for i in range(10)</code>, it will assume that the minimum input is 0 and it should count by 1 to create a list of numbes counting to the number you input.<br><br>
+
+            If you input 2 values into <code>range()</code>, like <code>for i in range(-10, 10)</code> the first value will be the minimum and the second number the maximum.<br><br>
+
+            If you input 3 values into <code>range()</code>, like <code>for x in range(0, gw, cw)</code>, <strong>the third value will be what range counts by</strong>.<br><br>
+
+            In this case where <code>cw = 20</code> and <code>gw = 300</code>, the values you get for x are:<br>
+            0<br>
+            20<br>
+            40<br>
+            etc...<br>
+            with 280 as the last value since 300 is not included.<br><br>
+
+            Before the next section, try changing the values of <code>cw</code> and <code>gw</code> in the interactive code to see what happens. <strong>Be careful not to crash your browser by drawing too many cubes!</strong> For example, a <code>gw</code> of 2000 and <code>cw</code> of 1 will draw 4 million cubes.
+        </p>
+        <h4>Applying Sine</h4>
+        <p>
+            Now that we've drawn the grid efficiently, we can see that we have used the X and Z positions of our cubes but not the Y position, when we move each cube into place using <code>translate(x, 0, z)</code><br><br>
+
+            We can use a single equation to calculate a Y value for each of our cubes that will move each up or down into the shape of a wave. This function at the core of this equation is <strong>Sine</strong>, which is used across science and engineering to describe waves.
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/gridwave/sin_p1.png" alt="graph sin(x)" class="img-fluid rounded">
+        </div>
+        <p>
+            When we look at a graph of <code>sin(x)</code>, we see that as x increases towards infinity or decreases towards negative infinity, the output of <code>sin(x)</code>, the responding y value, waves up and down forever in both directions.
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/gridwave/sin_p2.png" alt="graph sin(x) zoomed out" class="img-fluid rounded">
+        </div>
+        <p>
+            To apply this wave behvior as our y value: <br>
+            <code>y = sin(x * 10) * 20 </code><br><br>
+
+            Then make sure to apply this value <code>y</code> by including it in the translation:<br>
+            <code>translate(x, y, z)</code><br><br>
+
+            In the code below you can see how this creates a wave side to side on the X axis, since x was used as an input:
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/gridwave/gridwave_p1.png" alt="sin(x) 3D wave" class="img-fluid rounded">
+        </div>
+        <p>
+            So if we change the equation to use <code>z</code> as an input, what do you think should happen?<br>
+            <code>y = sin(z * freq) * amp</code>
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/gridwave/gridwave_p2.png" alt="sin(z) 3D wave" class="img-fluid rounded">
+        </div>
+        <p>
+            With Z as an input the formula creates a wave forwards on the Z axis, changing the <code>y</code> values based on the value of <code>z</code>.<br><br>
+
+            So how do we make a wave go diagonally? What axis is diagonal?<br><br>
+
+            While <code>x</code> and <code>z</code> alone give us a line on the X axis and a line on the Z axis (perpendicular to each other), a diagonal line crosses through both the X and the Z axis.<br><br>
+
+            Normally we might define a linear relationship between X and Z as some form of <code>x = z</code>, but as an input to <code>sin()</code>, this diagonal will form from the input <code>(x + z)</code>, with the crest appearing wherever <code>(x+z)</code> is proportional to the frequncy of the wave.<br><br>
+
+            The code below shows the the result of <code>y = sin((x+z) * freq)* amp</code>
+
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/gridwave/gridwave_p3.png" alt="sin(x+z) 3D wave" class="img-fluid rounded">
+        </div>
+        <p>
+            So what if we want to reverse the diagonal relationship of the input <code>(x + z)</code>?<br><br>
+
+            The code below shows the the result of <code>y = sin((x-z) * freq)* amp</code>
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/gridwave/gridwave_p4.png" alt="sin(x-z) 3D wave" class="img-fluid rounded">
+        </div>
+        <p>
+            So what do <code>freq</code> and <code>amp</code> do?<br>
+            <strong>Frequency</strong> controls the wavelength, how stretched or compressed the waves are. Higher values will create more compressed waves.<br>
+            <strong>Amplitude</strong> controls the max and min height of the wave, refered to as the crests and troughs. If the amplitude is 10, the max height will be 10 and the min height will be -10.<br><br>
+        </p>
+        <p>
+            <strong>Now let's animate the wave.</strong> To make the grid wave up and down, we simply need to add a variable to our equation which is constantly increasing. This is like moving a graph of the sine wave to the right, as the wave goes up and down forever as its inputs increase incrimently.<br><br>
+
+            In the interactive code below, the variable <code>wave</code> has been added, simply so it could be increased forever using <code>wave += 0.1</code><br><br>
+
+            Try experimenting with all of the variables to see how they effect the shape before moving on to <strong>color interpolation</strong>.
+        </p>
+        <iframe src="https://trinket.io/embed/python/99325c50b5e4" 
+        width="100%" 
+        height="600" 
+        frameborder="0" 
+        marginwidth="0" 
+        marginheight="0" 
+        allowfullscreen>
+        </iframe>
+        <h4><br>Blend Colors with Interpolation</h4>
+        <p>
+            Interpolation is finding the value in the middle of two other values. One common way to do this is to take an average. In this case we'll be interpolating between two colors based on <strong>weights</strong> which control how much of each color to use, which we will input into the Processing function <code>lerpColor()</code>.<br><br>
+
+            <code>lerpColor()</code> takes three inputs:<br>
+            Color 1, <br>
+            Color 2, <br>
+            A float (decimal number) between 0.0 and 1.0 which controls how much of each color is used.<br><br>
+
+            Input 0.0 tells <code>lerpColor()</code> to return 100% color 1<br>
+            Input 1.0 tells <code>lerpColor()</code> to return 100% color 2<br>
+            Input 0.5 tells <code>lerpColor()</code> to return 50% color 1 and 50% color 2<br>
+            Input 0.8 tells <code>lerpColor()</code> to return 20% color 1 and 80% color 2<br>
+            Input 0.2 tells <code>lerpColor()</code> to return 80% color 1 and 20% color 2<br><br>
+
+            Do you see the pattern?<br>
+            The input is the proportion of color 2 to color 1 in the color that <code>lerpColor()</code> produces.<br><br>
+
+            To put this in action define 2 colors in your setup function, for example red and blue:
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/gridwave/gridwave_p5.png" alt="color interpolation 3D wave" class="img-fluid rounded">
+        </div>
+        <p>
+            In the code above the input for the weight of <code>lerpColor()</code> is <code>(y+amp)/(amp*2)</code>, which makes the coloring of the wave based on its height.<br><br>
+
+            In this case when <code>amp = 20</code>, the maximum of the wave and the minimum of <code>y</code> will be 20 and -20. Let's consider the range of outputs this gives us:<br>
+            <code>y = 10</code> (max) : (10 + 10 / 20) = 1 <br>gives 100% color 2<br><br>
+            <code>y = -10</code> (min) : (-10 + 10 / 20) = 0 <br>gives 100% color 1<br><br>
+            <code>y = 0</code> (middle): (0 + 10 / 20) = 0.5 <br>gives 50% color 1 and 50% color 2<br><br>
+            <code>y = 5</code> (3/4 up): (5 + 10 / 20) = 0.75 <br>gives 25% color 1 and 75% color 2<br><br>
+            and so on...<br><br>
+
+            This ratio we have established with <code>(y+amp)/(amp*2)</code> is an example of <strong>normalization</strong>, where a range of numbers is mapped to a set of values between 0.0 and 1.0. This is a technique which is often useful for data analysis.
+        </p>
+        <h4>Funky Color Interpolation</h4>
+        <iframe src="https://trinket.io/embed/python/07d27c754209" 
+        width="100%"
+         height="600" 
+         frameborder="0" 
+         marginwidth="0" 
+         marginheight="0" 
+         allowfullscreen>
+        </iframe>
+        <p>
+            In the interactive code above, you can see that <code>lerpColor()</code> can give some surprising results when the weights it is given are outside the 0.0 to 1.0 range. In this case two very similar shades of green are being interpolated. With this code there are many surprising variations you can discover by experimenting with the variables.<br><br>
+
+            <strong>The knowledge from this project will serve you well for creating environments and structures in 3D!</strong>
+        </p>
+
+
+        
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <footer class="bg-dark text-center text-white py-3">
+        © 2025 Gabriel del Valle Python Creative Curriculum
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+

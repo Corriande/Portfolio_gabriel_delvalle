@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Catcher</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+        .home-icon {
+            text-decoration: none;
+            color: white;
+        }
+        .home-icon:hover {
+            color: #ffcc00; /* Highlight color for hover */
+        }
+
+
+        h1 {
+            margin-top: 50px; /* Larger space above h1 */
+            margin-bottom: 40px; /* Larger space below h1 */
+        }
+
+        h2 {
+            margin-top: 50px; /* Smaller space above h2 */
+            margin-bottom: 30px; /* Smaller space below h2 */
+        }
+
+        p {
+            margin-top: 30px; /* Smaller space above h2 */
+            margin-bottom: 30px; /* Smaller space below h2 */
+        }
+
+        .no-bullets {
+            list-style-type: none; /* Removes bullet points */
+            padding-left: 20px;    /* Adds indentation */
+            margin: 0;             /* Removes default margin */
+        }
+
+        .no-bullets li {
+            margin-bottom: 5px;    /* Adds spacing between list items */
+        }
+
+        .indented-text {
+        display: block;     /* Ensures each span starts on a new line */
+        text-indent: 20px;  /* Indents the text */
+        margin-bottom: 0px; /* Optional: Adds spacing between items */
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!-- Home Icon -->
+            <a href="cc_curriculum.html" class="home-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                    <path d="M6.5 10.995V14.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-3.505h3.5a.5.5 0 0 0 .5-.5V7.995l-6-5-6 5v6.5a.5.5 0 0 0 .5.5H6.5z"/>
+                </svg>
+            </a>
+            <span class="navbar-brand ms-3">P2</span>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h1 class="text-center">Dream Catcher</h1>
+        <!-- Hardcoded iframe for Project 2 -->
+        <iframe
+            src="https://trinket.io/embed/python/0cb293a49a38" 
+            width="100%" 
+            height="600" 
+            frameborder="0" 
+            marginwidth="0" 
+            marginheight="0" 
+            allowfullscreen>
+        </iframe>
+    
+        <!-- Paragraph Section -->
+        <div class="mt-4">
+            <h2>An exciting second assignment!</h2>
+            <p>
+                Students being introduced to Python will find themselves bombarded by numberic thinking,
+                new words and concepts, and the frustration of spacing. This is why after introducing 
+                the basics, I like to grab their attention with a mesmerizing project. The 
+                <strong>Dream Catcher</strong> is the second animation assignment students will start often
+                on their second class. Despite its visual complexity, the process of putting it together is 
+                explained with simple geometric concepts:
+
+            </p>
+            <div class="text-center my-4">
+                <img src="assets/images/dreamcatcher/dreamcatcher_p00.png" alt="Impossible Triangle" class="img-fluid rounded">
+            </div>
+            <p>
+
+                <ol>
+                    <li> Arrange points into a wheel, and spin it </li>
+                    <li> Arrange three spinning wheels into a triangle</li>
+                    <li> Connect the points between each spinning wheels with lines</li>
+                </ol>
+
+                In the image below, the number of points in each circle <code>num_points</code> is set to 10
+                and the <code>radius</code> is set to 50.
+            </p>
+            <div class="text-center my-4">
+                <img src="assets/images/dreamcatcher/dreamcatcher_p0.png" alt="Impossible Triangle" class="img-fluid rounded">
+            </div>
+            <p>Already in this state, students find this animation vexing. As it moves it appears 2D and 3D at the same time.</p>
+            <p>Next, you can twist the columns by making each wheel spin at a different speed, as in the image below.</p>
+
+            <div class="text-center my-4">
+                <img src="assets/images/dreamcatcher/dreamcatcher_p1.png" alt="Impossible Triangle" class="img-fluid rounded">
+            </div>
+
+            <p>Finally, to make the animation most mesmerizing, increase <code>num_points</code> to 100 and <code>radius</code> to 250.</p>
+            
+            <p>It was a student that discovered this final transformation of the Dream Catcher. 
+                I had encouraged students to experiment changing the variables in this project, increasing the number of points,
+                changing the color of the lines and the speed of the spinning to see if they could make their own
+                versions of the project special. I had intended to teach them about the unique strengths of creating through code-
+                how designing a project around a few variables allows you to create drastically different results with the tweaking of a few numbers.
+                In return I learned what this project could really do.</p>
+
+            <div class="text-center my-4">
+                <img src="assets/images/dreamcatcher/dreamcatcher_p2.png" alt="Impossible Triangle" class="img-fluid rounded">
+            </div>
+
+            <h2>Dream Catcher introduces the concept of lists</h2>
+            <p> 
+                In order to draw a line between two points, the X and Y coordinates of both points must be known.</p>
+            <p>
+                We can create a list for the X and Y coordinate of each circle, such as 
+                <code>topX</code>, <code>topY</code>, <code>leftX</code>, <code>leftY</code>, <code>rightX</code>, <code>rightY</code>.
+            </p>
+            <p>
+                With these lists, we can connect the first point of the top circle to the 
+                first point of the left circle using the command: 
+            </p>
+            <p>
+                <code>line(topX[0], topY[0], leftX[0], leftY[0])</code>
+            </p>
+            <p>
+                In the above line of code, 0 is the <strong>index</strong> of the first item in each <strong>list</strong>. 
+                The index of the second item in each list is 1, and the third item 2, and so on... 
+                Indexes are what make lists great for storing information. 
+                Each item in a list has a unique number based on its order in the list that can be used to retrieve the item or change it.
+            </p>
+
+            <p><strong>Every time you see square brackets <code>[]</code> think lists!</strong></p>
+
+            <h2> Let's say you have a list of fruits:</h2>
+            <p>
+                <code>fruits = ['apple', 'banana', 'mango', 'cherrimoya']</code>
+            </p>
+            <p> <code>fruits[3]</code> gives you <code>'cherrimoya'</code></p>
+            <p>To change the second item from 'banana' to 'rambutan' <code>fruits[1] = 'rambutan'</code></p>
+            <p> <code>fruits[4]</code> gives you an <strong>error</strong> <code>IndexError: list index out of range on line 28 in main.py</code></p>
+            <p>An index error occurs because you've tried to access a position in the list that does not exist.
+                Even though there are 4 items in the list, when we start counting from 0 the index only goes up to 3.
+            </p>
+            <p><code>fruits[4] = 'pumpkin'</code> would also give you an index error. 
+                To add a new item to the list, you can instead use <code>fruits.append('pumpkin')</code></p>
+            <p> To <strong>append</strong> a list is to add an item to the end of it.</p>
+            <p> You can also multiply a list. <code>fruits * 2</code> would give you a new single list with all the items from fruits repeated in their order inside:</p>
+            <p><code>['apple', 'rambutan', 'mango', 'cherrimoya', 'pumpkin', 'apple', 'rambutan', 'mango', 'cherrimoya', 'pumpkin']</code></p>
+            
+            <h3>Multiplying lists is an efficient way to create a list which is the exact size needed to store a specific number of data points.</h3>
+
+            <p>Consider how in this project the number of points in each circle can be adjusted by changing the single variable <code>num_points</code>.
+            Whether, <code>num_points</code> is set to 1, 2, 10, 20, or 100, this project will automatically make each wheel have that many points and connect each point between the wheels with lines.
+            For this to be possible, the lists which store each X and Y coordinate of each wheel must be created to store as many data points as <code>num_points</code> is set to.</p>
+            <p>This is why these lists are created in the following way:</p>
+            <p><code>rightX = [0] * num_points</code></p>
+            <p><code>rightY = [0] * num_points</code></p>
+
+            <p>If <code>num_points</code> is 10, this will give you a list with 10 zeros:</p>
+            <p><code>[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]</code></p>
+            <p>Now you have a list with a place holder spot for each data point you need to store.</p>
+            <p>The animation requires that we continually replace each data point in our lists anyways,
+                so these zeros will all be replaced by the first frame of the animation. But even if that
+                were not the case, it is more <strong>computationally efficient</strong> to create a list of the correct size
+                before filling it with information than to use <code>append()</code> to add each item. 
+            </p>
+            <p>
+                <strong>Advanced Topic:</strong>
+                This is because when python compiles code for the computer to execute, 
+                it can efficiently allocate memory to calculating a loop when the size of the elements involved is already known. 
+                If the size of a list changes throughout the execution of a loop, reallocating the size of the list in the memory 
+                creates extra computational steps on each cycle of the loop.
+            </p>
+
+            <h2>Looping through Lists</h2>
+            <p>Here's an opportunity to appreciate the elegance of how two simple concepts can come together in coding.
+                <strong>Loops and lists.</strong>
+                The technique of cycling through each item in a list is a fundamental part of any coder's toolkit. 
+                You will find it endlessly useful for a wide variety of projects and contexts.
+            </p>
+
+            <p>A <strong>for loop</strong> cycles through each item in a list.
+            Returning to our list of <code>fruits</code>, by setting up a <strong>for loop</strong>,
+            we can create a temporary variable with any name to be each item in <code>fruits</code> 
+            as we <strong>iterate</strong> through the list. Why don't we name this temporary variable <code>f</code>:</p>
+
+            <p><code>for f in fruits:</code><br>
+                <span class="indented-text"><code>print("I love to eat " + f)</code></span>
+            </p>
+
+            <p> This will give you:<br>
+                <ul class="no-bullets">
+                    <li>"I love to eat apple"</li>
+                    <li>"I love to eat rambutan"</li>
+                    <li>"I love to eat mango"</li>
+                    <li>"I love to eat cherrimoya"</li>
+                    <li>"I love to eat pumpkin"</li>
+                </ul>
+
+                In the line of code <code>print("I love to eat " + f)</code>, the temporary variable <code>f</code> stands in for each item in the list as it loops through.
+            </p>
+
+            <p>The <strong>temporary variable</strong> in a for loop is often assigned to keep track of the number of loops, using <code>i</code>.</p>
+
+            <p><code>for i in range(10):</code><br>
+                <span class="indented-text"><code>print(i)</code></span>
+            </p>
+            <p>This will give you:<br>
+                <ul class="no-bullets">
+                    <li>0</li>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                </ul>
+
+                <code>range()</code> is a python command that will create a list of numbers. When a single number <code>x</code> is input into 
+                <code>range()</code>, the list of numbers will start at 0 and count up to <code>x-1</code>, creating a list the size of <code>x</code>.<br><br>
+                Notice the range counts up to <code>x-1</code> because it starts counting from 0. This should seem familiar, as it's also how lists create their indexes,
+                so that a list with 10 items will have 9 as its last index.
+
+            </p>
+            <p><strong>Now let's bring this back to the Dream Catcher!</strong></p>
+            <p>No matter what the value of <code>num_points</code> is, the temporary variable <code>i</code> of <code>for i in range(num_points):</code> 
+            will cycle through each number from 0 to <code>num_points - 1</code>, which will give us the index of each item in each of our lists, 
+            <code>topX</code>, 
+            <code>topY</code>,
+            <code>rightX</code>,
+            <code>rightY</code>,
+            <code>leftX</code>,
+            <code>leftY</code>, 
+            which are each the length of <code>num_points</code>.
+
+        </p>
+
+        <p>Here's how we use <code>i</code> as an iterated index to replace the zero's 
+            these lists start with and update each value throughout the animation as the wheels spin:</p>
+            
+        <div class="text-center my-4">
+            <img src="assets/images/dreamcatcher/dreamcatcher_code1.png" alt="Impossible Triangle" class="img-fluid rounded">
+        </div>
+
+        <p>Here's how we use <code>i</code> to retrieve each item in the list in order to connect the dots between wheels:</p>
+        
+        <div class="text-center my-4">
+            <img src="assets/images/dreamcatcher/dreamcatcher_code2.png" alt="Impossible Triangle" class="img-fluid rounded">
+        </div>
+
+        <h2>On Circles and Spinning</h2>
+        <p>Many young students I teach love math! However, not all students learning python will be ready to digest the concept of 
+            <code>sin()</code> and <code>cos()</code>. In this project trigonometry is used to create the points on the circumference of a circle.
+        If students are excited to understand how, I will explain that sin is like the y value of a circle and cos is like the x value. 
+    This can be a great way to allow students to play with trigonometry hands on and see the results for themselves!</p>
+
+        <div class="text-center my-4">
+            <img src="assets/images/dreamcatcher/circle_cos_sin.gif" alt="sin_cos_gif" class="img-fluid rounded">
+        </div>
+
+        <p>However, for students who are not ready to absorb trigonometry concepts, <strong>understanding <code>sin()</code> and <code>cos()</code> is not necessary
+        to the core lesson of this project, which is using lists and loops!</strong> </p>
+        <p>For these students, I instead emphasize the lesson that <strong>knowing math
+            helps you do awesome things with coding!</strong> Just that is a strong take-away from this project.</p>
+
+        <p>For younger students, this project can be used to discuss the more accessible math concepts of angles and radians.</p>
+
+        <p>Notice the line of code <code>angle_step = angle * i + spin</code></p>
+        <p><code>angle * i</code> distributes points equally spaced around the circle. Then adding <code>spin</code> makes them spin.</p>
+        <p><code>spin</code> starts at 0 and is increased by 1 radian with each loop of the <code>draw()</code> function. Notice at the bottom of the code, <code>spin += radians(1)</code></p>
+        <p>This is like saying, for each equally spaced point on the circle, move each over by 1 degree, then 2 degrees, then 3 degrees... Each point will eventually be moved over by 360 degrees, returning each to their starting point when <code>spin</code>, was 0, at which point each will be moved over 361 degrees, which is visually the same as being moved over 1 degree.</p>
+        <p>To change the speed of the spinning, you can simply increase <code>spin</code> by a larger number of radians. So, to make all three wheels spin at different speeds, create new variables <code>spin2</code> and <code>spin3</code>, and increase each by a different rate:</p>
+        <p><code>spin += radians(1) <br>
+                spin2 += radians(2) <br>
+                spin3 += radians(3) </code></p>
+
+        <p> While many of my projects use spinning and circular distribution, trigonometry is only needed in 2D. </p>
+        <h3>Spinning in Processing is easier in 3D! </h3>
+        <h3>As you will see in the next project!</h3>
+
+
+        </div>
+    </div>
+
+
+    
+
+    <footer class="bg-dark text-center text-white py-3">
+        © 2025 Gabriel del Valle Python Creative Curriculum
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+

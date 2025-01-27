@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Sketch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+        .home-icon {
+            text-decoration: none;
+            color: white;
+        }
+        .home-icon:hover {
+            color: #ffcc00; /* Highlight color for hover */
+        }
+
+
+        h1 {
+            margin-top: 50px; /* Larger space above h1 */
+            margin-bottom: 40px; /* Larger space below h1 */
+        }
+
+        h2 {
+            margin-top: 50px; /* Smaller space above h2 */
+            margin-bottom: 30px; /* Smaller space below h2 */
+        }
+
+        p {
+            margin-top: 30px; /* Smaller space above h2 */
+            margin-bottom: 30px; /* Smaller space below h2 */
+        }
+
+        .no-bullets {
+            list-style-type: none; /* Removes bullet points */
+            padding-left: 20px;    /* Adds indentation */
+            margin: 0;             /* Removes default margin */
+        }
+
+        .no-bullets li {
+            margin-bottom: 5px;    /* Adds spacing between list items */
+        }
+
+        .indented-text {
+        display: block;     /* Ensures each span starts on a new line */
+        text-indent: 20px;  /* Indents the text */
+        margin-bottom: 0px; /* Optional: Adds spacing between items */
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!-- Home Icon -->
+            <a href="cc_curriculum.html" class="home-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                    <path d="M6.5 10.995V14.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-3.505h3.5a.5.5 0 0 0 .5-.5V7.995l-6-5-6 5v6.5a.5.5 0 0 0 .5.5H6.5z"/>
+                </svg>
+            </a>
+            <span class="navbar-brand ms-3">P1</span>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+
+        <div class="mt-4">
+            <h2>Completely new to coding? Start here.</h2>
+            <p>
+                <ul>
+                    <li>What is a coding language?</li>
+                    <li>First Sketch: Shapes, Colors, Loops</li>
+                    <li>First Animation: if-statements and processing functions</li>
+                </ul>
+            </p>
+            <h1 class="text-center">What is a Coding Language?</h1>
+            <p>
+               Python is one of many coding languages. Just like human languages, between coding languages there are many different ways to say the same core idea. For example, in human languages we have many ways to say "Hello":<br>
+               Hallo<br>
+               Hola<br>
+               Bonjour<br>
+               你好<br>
+               こんにちは<br>
+               नमस्ते<br><br>
+               In this case the core meaning being expressed in different ways is a greeting. In coding, the core meaning which stays the same between different coding languages is the logic and math which accomplishes our goal.
+               The way we express the logic and math using the language is the <code>syntax</code>, which is similar to the vocabulary and the grammar of a human language. We need to know how to accurately translate our ideas into 
+               syntax for the computer to understand our message.<br><br>
+               
+               Like learning a language, learning proper syntax takes memorization and practice. However, Python was designed to have a very simple and intuitive language.
+               There's a few simple rules that student's catch on to quickly after following along, typing code line by line with the instructor. Instead of syntax, most of the challenge of coding is in accomplishing a goal or expressing an idea
+               using the mechanisms of logic and math. This creative and problem solving skill is relevant to all coding languages. An idea when clearly expressed as logic and math can be easily translated to syntax. For example, if you can express an idea
+               logically, a Large Language Model such as ChatGPT can often accurately translate the idea into syntax for you.<br><br>
+
+               <strong>Thus, these lessons emphasize the logical and creative ideas beneath the code itself.</strong>
+            </p>
+            <h2>What makes Python Special?</h2>
+            <p>
+                Python is known as the coding language for 10 year olds and PHD's. It was designed to make powerful coding techniques easily accessible, with simple syntax and fewer computational details to consider. Python is a <code>High Level Language</code>
+                which actually means it is simpler, closer to how humans think, but also slower. <code>Low Level Languages</code> like C, C++, Rust, or Go are closer to the 1's and 0's computers calculate with at the most fundamental level, so they are more difficult to use, but also faster.<br><br>
+
+                Some coding languages are built for specific purposes, like JavaScript which is used for web development.<br><br>
+
+                Python can also be used for web development, as well as apps, controlling electronics and robots, creating media and video games, <strong>and especially, working with data.</strong> Python is a skill valuable to professions across STEM, finance, research, and design
+                for its ability to manipulate data. Python's wide use in working with data has made it a core tool in the creation and use of AI tools. For creative purposes Python can be used inside the free but powerful 3D modelling software Blender, and many professional game engines such as Unreal Engine and Unity
+                have the option to code in Python.
+            </p>
+            <h2>Libraries Power-Up Python</h2>
+            <p>
+                Besides its ease of use, what makes Python useful for so many tasks is that so many <code>libraries</code> have been developed for Python. Each library is like a power-up for python that gives it the ability to do something new. For example, all of the projects in this 
+                curriculum will be using the Processing library, which gives us many new commands we can use to draw shapes on a canvas and manipulate a 3D environment. 
+            </p>
+
+            <h1 class="text-center">First Sketch</h1>
+            <!-- Hardcoded iframe for Project 2 -->
+            <iframe src="https://trinket.io/embed/python/2a73175e0bce"
+                width="100%" 
+                height="100%" 
+                frameborder="0" 
+                marginwidth="0" 
+                marginheight="0" 
+                allowfullscreen>
+            </iframe>
+            <p>
+                Each project made with Processing will start with the same basic template, pictured below.<br>
+                First we import the library so we can use it. The * denotes we want the entire library.<br>
+                <code>from processing import*</code><br>
+                The Processing library expects the <code>setup()</code> and <code>draw()</code> functions in order to work. In coding, a <code>function</code> can be called to activate the code inside.<br>
+                When you hit the play button to run your code <code>setup()</code> run once at the beginning and <code>draw()</code> will continue to run until stopped, an infinite loop.
+            </p>
+            <div class="text-center my-4">
+                <img src="assets/images/firstsketch/firstsketch_p1.png" alt="starting template code" class="img-fluid rounded">
+            </div>
+            <p>
+                <strong>Now let's notice the spacing.</strong> <br>
+                We know the command <code>size(500, 500)</code> belongs to the setup function because it is spaced infront of it. In the image below we can see that if we remove the space from the size command 
+                we get an error which prevents our code from running. This error occurs because the command <code>size(500, 500)</code> is no longer inside the setup function, leaving it empty. Not only does Processing require that we 
+                call the size command inside the setup function, but the reason for this particular error is because <strong>Python doesn't like it when a function, a loop, or an if-statement is left empty</strong>. <br><br>
+
+                Spacing is one of the most common errors that students following along with code line by line will encounter, but making this error is how they will confront the challenge of structuring the logic in their code.
+
+            </p>
+            <div class="text-center my-4">
+                <img src="assets/images/firstsketch/firstsketch_p2.png" alt="incorrect template code" class="img-fluid rounded">
+                <img src="assets/images/firstsketch/firstsketch_p3.png" alt="error message" class="img-fluid rounded">
+            
+            <h2>RGB colors</h2>
+            <div class="text-center my-4">
+                <img src="assets/images/firstsketch/rgbpixeleye.png" alt="pixel eye" class="img-fluid rounded">
+            </div>
+            <p>
+                We can create any color on a computer with a combination of Red, Green, and Blue.<br><br>
+                "But wait!" you might think, "How do you make yellow using red, green, and blue?"<br><br>
+                It's true that if you were using paint no combination of red, green, and blue would ever give you yellow. But instead of paint we're using <code>pixels</code>, tiny squares of light on your screen that are each part 
+                red, green, and blue. Each 3 rectangle grouping of red, green, and blue in the image below is a single pixel. <br><br>
+
+                Since each value of RGB is at its max value (255) in the image below <code>color(255, 255, 255)</code> from afar your eye would see the image below as pure white.
+            </p>
+            <div class="text-center my-4">
+                <img src="assets/images/firstsketch/rgbpixels.png" alt="rgb pixel visual" class="img-fluid rounded">
+            </div>
+            <p>
+                So how do we make yellow?<br>
+                You lie to the eye using red and green.<br>
+                Our eyes have light receptors for red, green, and blue, which interpret colors such as yellow when both the red and green receptors are stimulated.<br><br>
+                Whenever you think you see yellow on a computer screen, this is what is really there.<br>
+                <code>color(255, 255, 0)</code> 
+            </p>
+            <div class="text-center my-4">
+                <img src="assets/images/firstsketch/rgbpixels2.png" alt="rgb yellow visual" class="img-fluid rounded">
+            </div>
+            <p>
+                When each RGB value is the same, for example <code>color(100, 100, 100)</code>, the color is on the greyscale. If we input a single number as a color, processing will interpret it as greyscale:<br>
+                <code>color(0)</code> gives black <br>
+                <code>color(100)</code> gives grey <br>
+                <code>color(200)</code> gives light grey <br>
+                <code>color(255)</code> gives white <br><br>
+
+                RGB colors can also be made easily accessible to anyone using Google's colorpicker tool.
+            </p>
+            <div class="text-center my-4">
+                <img src="assets/images/firstsketch/colorpicker.png" alt="color picker" class="img-fluid rounded">
+            </div>
+            <p>
+                Have students customize their favorite color by positioning the two circular sliders to adjusting the brightness and hue. Then they can copy the RGB values from the table in the bottom left into their code.
+            </p>
+            <h2>Draw a Shape</h2>
+            <p>
+                You'd be surprised by how many creative projects you can make using just ovals, rectangles, lines, and curves. These are the 2D shapes Processing gives us commands to draw, unless you define your own shapes using more advanced techniques.<br><br>
+
+                <code>ellipse()</code> draws circles and ovals, takes as input: x position, y position, width, height.<br><br>
+
+                To draw a red circle in the middle of the screen:
+            </p>
+            <div class="text-center my-4">
+                <img src="assets/images/firstsketch/firstshape.png" alt="first shape" class="img-fluid rounded">
+            </div>
+            <p>
+                Notice that in this example the X and Y value for the center of the canvas is (250, 250). It's common to expect the center of a canvas to be (0, 0), but <strong>in Processing the <code>origin (point 0, 0)</code> of the canvas is the top left corner.</strong><br><br>
+
+                This means in the example where the size is set to (500, 500) that:<br>
+                The point (500, 0) is the top right corner <br>
+                The point (0, 500) is the bottom left corner <br>
+                The point (500, 500) is the bottom right corner<br> 
+                <strong>This means that the Y axis is upside down. To move down the canvas you increase Y. To move upt the canvas you increase Y.</strong><br>
+                I consider this to be the most confusing aspect of Processing, but it's easy enough to remember. <br><br>
+
+                <code>rect()</code> draws rectangles and takes the same inputs as <code>ellipse(x, y, width, height)</code>
+            </p>
+            <div class="text-center my-4">
+                <img src="assets/images/firstsketch/firstshape2.png" alt="first shape 2" class="img-fluid rounded">
+            </div>
+            <p>
+                Notice that the point of the rectangle that is at the center of the canvas is the top left corner. This is the default position for the X and Y value of a rectangle in Processing, while for an ellipse it is the center of the shape. When working with rectangle's I prefer to 
+                set the X and Y value to the center of the rectangle by adding the following command to the setup function:<br>
+                <code>rectMode(CENTER)</code>
+            </p>
+            <h2>Repetition with Loops</h2>
+            <p>
+                So far we've made a single shape. Now let's make many. <br><br>
+
+                <code>for i in range(x):</code> creates a for-loop that will repeat whatever is inside x many times. Remember for that a line of code to be "inside" another in Python, we space the inside code forwards.
+            </p>
+            <div class="text-center my-4">
+                <img src="assets/images/firstsketch/firstloop.png" alt="first loop" class="img-fluid rounded">
+            </div>
+            <p>
+                However, if we run the code above, we will see no difference from the single circle we drew before. The loop did draw 15 circles, but because the X and Y coordinates of the circle do not changed, each is exactly on top of the other.<br><br>
+
+                To create a change on each repetition of the loop, we can use the <code>temporary variable i</code>. The temporary variable, which in this code we called i, could be given any name. The temporary variable in a for loop is often assigned to keep track of the number of loops, using <code>i</code>
+            </p>
+            <p><code>for i in range(10):</code><br>
+                <span class="indented-text"><code>print(i)</code></span>
+            </p>
+            <p>This will give you:<br>
+                <ul class="no-bullets">
+                    <li>0</li>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                </ul>
+
+                <code>range()</code> is a python command that will create a list of numbers. When a single number <code>x</code> is input into 
+                <code>range()</code>, the list of numbers will start at 0 and count up to <code>x-1</code>, creating a list the size of <code>x</code>. A <code>for-loop</code> will loop through each item in a list, assigning each item to the temporarry variable<br><br>
+                Notice the range counts up to <code>x-1</code> because it starts counting from 0. <br><br>
+
+                Since <code>i</code> changes on every cycle, we can use <code>i</code> to produce a different outcomes throughout our loop.
+
+            </p>
+            <div class="text-center my-4">
+                <img src="assets/images/firstsketch/firstsketch_p4.png" alt="loop with changes" class="img-fluid rounded">
+            </div>
+            <p>
+                In this code we've created another temporary variable <code>var</code> which only exists within the loop, and will be defined on each cycle as <code>i * 20</code>, giving us the values 0, 20, 40, 60, ... 180. <br>
+                By adding <code>var</code> to the Y poition input of where the circle is drawn, we change the Y position, moving each circle down. <br><br>
+
+                And this is just one way we could change our circles on each cycle of the loop using <code>var</code>! We could also increase the X position, the height, or the width of each circle.<br><br>
+
+                Here's if we add it to the X position:
+            </p>
+            <div class="text-center my-4">
+                <img src="assets/images/firstsketch/firstsketch_p5.png" alt="loop with changes" class="img-fluid rounded">
+            </div>
+            <p>Here's if we add it to all the inputs:</p>
+            <div class="text-center my-4">
+                <img src="assets/images/firstsketch/firstsketch_p6.png" alt="loop with changes" class="img-fluid rounded">
+            </div>
+            <p>And here's if we add it to only the Y position and the width:</p>
+            <div class="text-center my-4">
+                <img src="assets/images/firstsketch/firstsketch_p7.png" alt="loop with changes" class="img-fluid rounded">
+            </div>
+            <p>
+                Finally, there's one more simple change we can create with <code>var</code> in our loop I'd like to demonstrate, which is gradually changing the color of our circles by adding or subtracting var from the RGB values in <code>fill()</code>. <br><br>
+
+                In this example, my red value is high and my green and blue values are low. I could add <code>var</code> to the blue value to make the circles grow more purple or to the green value to make them grow more yellow. I could also subtract <code>var</code>
+                from the the red value to make the circles become darker.<br><br>
+                Notice that to do this in the code below I've moved <code>fill()</code> to the inside of the loop where <code>var</code> exists and the color can be reassigned on each loop.
+            </p>
+            <div class="text-center my-4">
+                <img src="assets/images/firstsketch/firstsketch_p8.png" alt="loop with changes" class="img-fluid rounded">
+            </div>
+            <p><strong>Congratualtions on completing the First Sketch! Next is your first animation.</strong></p>
+            <h2>First Animation: Sunrise Sunset</h2>
+            <iframe src="https://trinket.io/embed/python/2c2023f4a95e"
+                width="100%" 
+                height="100%" 
+                frameborder="0" 
+                marginwidth="0" 
+                marginheight="0" 
+                allowfullscreen>
+            </iframe>
+            <p>
+                In the first sketch, even if nothing was moving, as long as the code was being run (if you hit the play button and didn't stop the code afterwards) the canvas was being refreshed many times per second, drawing the shapes in the same positions each time the <code>draw()</code> function looped.
+                To create movement, all we have to do is have the position of one of the shapes change between each loop of the <code>draw()</code> function.<br><br>
+
+                Let's start by drawing a circle like a sun on a blue background and making it go down. 
+            </p>
+            <div class="text-center my-4">
+                <img src="assets/images/firstsketch/firstanimation_p1.png" alt="a sun goes down" class="img-fluid rounded">
+            </div>
+            <p>
+                In the code above, <code>move_y += 1</code> increases the value of <code>move_y</code> by 1 on each loop of the draw function, and by adding <code>move_y</code> to the Y position of our circle it will be drawn lower on the canvas with each loop, creating a smooth descent.
+                If we wanted the sun to descend faster we could simply increase the amount added on each loop, for example, <code>move_y += 5</code>. <br><br>
+
+                <strong>Now here's an important nuance.</strong> Why did we define <code>move_y = 0</code> outside the draw function? Remember that as the draw function loops each command inside of it will be called from top to bottom. If we start the draw function with <code>move_y = 0</code>,
+                and then we try to increase its value at the end of the loop with <code>move_y += 1</code>, when the loop completes and we return to the top of the draw function for another cycle, <code>move_y = 0</code> would be called again, erasing any change over time we hoped to create.<br><br>
+
+                Thus, we define <code>move_y = 0</code> in the <strong>global space</strong> (outside any function) where it will only be called once when the code is first run. However, when we define a function in Python, it assumes each variable inside of it is unique unless explicitly told otherwise.
+                This is why we've added to the draw function <code>global move_y</code>, which specifies that the <code>move_y</code> variable in the draw function is the same variable in the global space. We need to add this to any function where we intend to change the value of <code>move_y</code>, but it is only necessary
+                to add to a function if you intend to change the value of the variable in that function. <br><br>
+
+                <strong>Now the circle moves down, but it also disappears below the canvas, falling forever. Now what?</strong><br><br>
+
+                To create an animation where the sun rises and sets, we want the sun to reverse direction and start rising up once it passes the bottom of the screen. Let's break this goal down into two logical challenges:<br><br>
+
+                <strong>1. How do we know when the sun goes below the canvas?</strong><br><br>
+
+                When <code>move_y = 0</code>, the Y position of the sun is 250, the center of the canvas. <br><br>
+                The distance between the center of the canvas and the bottom is 250.<br><br>
+                 Thus, when <code>move_y = 250</code>, the sun is halfway off the screen, the center of the sun positioned at the bottom edge. <br><br>
+                 Since the radius of the sun is 50, we know the sun will be fully off the screen when <code>move_y = 300</code>, and we can add a little more to that so there's a brief pause between its disappearance and it rising again.<br><br>
+
+                <strong>2. How do we make the sun rise instead of descend?</strong><br><br>
+
+                Since <code>move_y += 1</code> made the sun move down, it should be simple to recognize that the opposite of this, subtracting one on each loop with <code>move_y -= 1</code> what make the sun move up. <br><br>
+
+                However, we cannot change <code>+=</code> to <code>-=</code> in the middle of our code running.
+
+                What we can do is replace the static number <code>1</code> with a variable such as <code>pos_min</code> that can have its value changed whenever we please to 1 or -1, allowing us to increase or decrease the value of move_y with <code>move_y += pos_min</code><br><br>
+
+                <strong>Set a condition with <code>if</code>:</strong><br><br>
+
+                "If you listen, then you will learn".<br><br>
+
+                This is an exmaple of a conditional statement I provide to students. We know in this statement that <code>"you will learn"</code> will only happen <code>"If you listen"</code>.<br><br>
+
+                <code>if-statements</code> let us specify when we want something to happen. In this case we want the sun to switch directions to rise when it reaches below the canvas and switch directions to descend when it reaches above the canvas. We know that we can do this by changing
+                <code>pos_min = -1</code> and <code>pos_min = 1</code> respectively. So let's bring it all together:
+            </p>
+            <div class="text-center my-4">
+                <img src="assets/images/firstsketch/firstif.png" alt="if statement" class="img-fluid rounded">
+            </div>
+            <p>
+                Notice the spacing here! <br><br>
+
+                Code is moved forward to be inside each if-statement.<br><br>
+
+                But each if-statement is aligned to the one above it. If the second if statement were moved forwards to be aligned with <code>pos_min = -1</code>, the second if-statement would be inside the first one and could only activate if the first one were also activated!<br><br>
+
+                <strong>With these if-statements the sun will now rise up and down. Now let's add a final detail and fade the sky from blue to pink.</strong>
+
+                The red value of our background is 0. To turn the sky pink we just need to increase the red value, and we want this to happen gradually as the sun is moving down but not as it moves up.<br><br>
+
+                Luckily we already have a variable which increases as the sun moves down and decreases as the sun moves up: <code>move_y</code>. Thus to complete your first animation, change the background color with:<br><br>
+
+                <code>background(move_y, 200, 250)</code><br><br>
+
+                <strong>Save your work and continue on to make more advanced animations!</strong>
+
+
+
+            </p>
+
+    </div>
+
+    <footer class="bg-dark text-center text-white py-3">
+        © 2025 Gabriel del Valle Python Creative Cirriculum
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+

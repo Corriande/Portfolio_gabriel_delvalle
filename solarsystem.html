@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+        .home-icon {
+            text-decoration: none;
+            color: white;
+        }
+        .home-icon:hover {
+            color: #ffcc00; /* Highlight color for hover */
+        }
+
+
+        h1 {
+            margin-top: 50px; /* Larger space above h1 */
+            margin-bottom: 40px; /* Larger space below h1 */
+        }
+
+        h2 {
+            margin-top: 50px; /* Smaller space above h2 */
+            margin-bottom: 30px; /* Smaller space below h2 */
+        }
+
+        p {
+            margin-top: 30px; /* Smaller space above h2 */
+            margin-bottom: 30px; /* Smaller space below h2 */
+        }
+
+        .no-bullets {
+            list-style-type: none; /* Removes bullet points */
+            padding-left: 20px;    /* Adds indentation */
+            margin: 0;             /* Removes default margin */
+        }
+
+        .no-bullets li {
+            margin-bottom: 5px;    /* Adds spacing between list items */
+        }
+
+        .indented-text {
+        display: block;     /* Ensures each span starts on a new line */
+        text-indent: 20px;  /* Indents the text */
+        margin-bottom: 0px; /* Optional: Adds spacing between items */
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!-- Home Icon -->
+            <a href="cc_curriculum.html" class="home-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                    <path d="M6.5 10.995V14.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-3.505h3.5a.5.5 0 0 0 .5-.5V7.995l-6-5-6 5v6.5a.5.5 0 0 0 .5.5H6.5z"/>
+                </svg>
+            </a>
+            <span class="navbar-brand ms-3">P3</span>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h1 class="text-center">Solar System</h1>
+        <!-- Hardcoded iframe for Project 2 -->
+        <iframe 
+            src="https://trinket.io/embed/python/cae9b0b75362" 
+            width="100%" 
+            height="600" 
+            frameborder="0" 
+            marginwidth="0" 
+            marginheight="0" 
+            allowfullscreen>
+        </iframe>
+    
+        <!-- Paragraph Section -->
+        <div class="mt-4">
+            <h2>Review lists with easy 3D</h2>
+            <p>
+                <strong>Solar System</strong> is a great follow up to the <strong>Dream Catcher</strong> project since it builds on the concept of 
+                lists while escalating the excitement with 3D. In fact, spinning is even easier in 3D than it was
+                in the Dream Catcher project, as 3D in processing provides a rotate command. Using trigonometry to
+                spin is only needed in 2D! As a follow up to the Dream Catcher this allows students to feel that they
+                can relax a little, even as they learn new coding concepts.<br><br>
+
+                I will often teach stand alone 3 hour coding camps for students who want a single day's introduction to python.
+                Together, the First Sketch, Sunset, Dream Catcher, and Solar System make up a great 3 hour class.
+                Working in 3D makes for a satisfying conclusion that can leave students excited for more.
+
+
+            <h2>Solar System Introduces Random</h2>
+            <p> 
+
+                One of the advantages of coding as a creative medium is how easy it is to change variables for a different result. 
+                For example, in the previous <strong>Dream Catcher</strong> project, we were able to change the variable <code>num_points</code>
+                to any positive <code>integer</code> (whole number), and the animation would generate that many points in each wheel. This allowed us
+                to change the animation in significant ways by changing a single number! (Not to mention how other values such as the radius of each wheel
+                or the position of each wheel could also be easily altered by tweaking a few variables). <br><br>
+
+                Similarly in this project the variable <code>num_planets</code> will control how many planets to generate.
+                Each planet will have its own unique color, xyz position, and size. Making one individual planet is easy, as the code below shows.
+            </p>
+            <div class="text-center my-4">
+                <img src="assets/images/solarsystem/solarsystem_p2.png" alt="single planet" class="img-fluid rounded">
+            </div>
+            <p>
+                This is the time to emphasize to students, even though we could draw planets one by one, to be good coders <strong>We want to be smart and creative so we can be lazy!</strong>
+                We can come up with a more clever way to <strong>generate</strong> planets automatically, so we can have as many as we want 3 planets, or 500. To do this we need to use random!
+
+            </p>
+            <div class="text-center my-4">
+                <img src="assets/images/solarsystem/solarsystem_p0.png" alt="Solay System 3 planets" class="img-fluid rounded">
+            </div>
+            <p>The difference between these two photos is just that the variable <code>num_planets</code> is set to 3 in the above and 500 in the below.</p>
+            <div class="text-center my-4">
+                <img src="assets/images/solarsystem/solarsystem_p1.png" alt="Solay System 500 planets" class="img-fluid rounded">
+            </div>
+
+            <h2>Storing Random Variables</h2>
+
+            <p>
+                Creating a random value is very simple since the processing library includes a random value command. <br><br>
+
+                <code>x = random(100)</code><br><br>
+                <code>x</code> will be any <code>float</code> between 0 and 100. <br>
+                A <code>float</code> is a <code>numeric data type</code> for any number with a decimal, such as 2.5, 0.1, 0.0<br>
+                Here's an example of a random float value: 93.0922002303 <br><br>
+
+                So here's the catch in using random variables in an animation. Remember that the draw function is an infinite loop.
+                If we define a variable inside the draw function it will be re-defined on each loop. In previous projects, we've needed to
+                define a variable outside the loop so it could change over time, such as the variables <code>move_y</code> in <strong>Sunset</strong> and <code>spin</code>
+                in <strong>Dream Catcher</strong>. In this case we will generate our random data outside the loop to <strong>avoid it changing</strong>. <br><br>
+
+                In the animation below you can see what happens if we try to plug the random function directly into the command to draw a sphere.
+                One each frame the sphere is drawn with a new random value, causing it to flux in size dramatically. This actually makes for a great exploding animation.
+                This is one of the cases where I will try to demonstrate first the wrong way to approach a problem before showing the right way. For those new to 
+                coding it's helpful to see with their own eyes why we do things one way and not another. With the <strong>exploding planet</strong> you get a strong visual
+                indicator of how the draw function and random numbers behave.
+            </p>
+        </div>
+
+        <iframe src="https://trinket.io/embed/python/b0c973184980" 
+        width="100%" 
+        height="600" 
+        frameborder="0" 
+        marginwidth="0" 
+        marginheight="0" 
+        allowfullscreen></iframe>
+
+        <div class="mt-4">
+            <p>
+                While the draw function is a forever loop the setup function runs once at the beginning. Defining our variables in the setup function is how we will keep our
+                random values constant, as shown in the code below.
+            </p>
+            <div class="text-center my-4">
+                <img src="assets/images/solarsystem/solarsystem_p3.png" alt="generate random values code" class="img-fluid rounded">
+            </div>
+            <p>
+                Like in <strong>Dream Catcher</strong>, we define a set of lists to be the right size to store a random value, based on the variable <code>num_planets</code>.
+                These lists are first defined in the <code>global context</code>, which like the setup function only runs once. In the setup function when we write the line:<br>
+                <code>global sizes, planety, planetx, colors</code> <br>We are adding or accessing variables to the global context, which lets them be used in any part of our code.<br><br>
+
+                Another variable we've defined in the setup function is <code>angle</code> which is how much we will rotate each planet around the sun. By dividing 360 by num_planets we 
+                give each planet its own position around the sun, making the composition look balanced and avoiding overlap between planets. We only need to calculate this once.<br><br>
+
+                <strong>Here comes some nuance...</strong><br>
+
+                A function like setup or draw is not initially connected to the global context. Any variables created inside setup will be assumed to be its own unique entity,
+                even if a variable of that name exists in the global context. That means if we want to assign random values to our lists in the setup function, we need to declare each
+                list <code>global</code> in the setup function, this way python recognizes the lists in the setup function as the same lists in the global context. <br><br>
+
+                If that's the case then why not define the random values in the global context? Good point! We could run a for-loop in the global context and define our random values there.
+                <strong>However</strong>, the thing stopping us from doing that is a nuance of the processing library. Processing commands such as:<br>
+                <code>ellipse()</code> draw a circle<br>
+                <code>fill()</code> draw a color<br>
+                <code>sphere()</code> draw a sphere<br>
+                <code>my_custom_color = color(r, g, b)</code> define a color object<br>
+                <code>random()</code> processing's built in random function<br>
+                <code>radians()</code> processing's built in function to convert an angle to radians<br>
+                etc.. <br>
+                Any command that comes from the processing library can only be called inside of the draw and the setup functions. It's from adapting to this nuance that the setup function gets most of its use.<br><br>
+                This kind of nuance that's specific to the processing library is not the kind of information I emphasize in class as important for students to learn from this lesson. 
+                <strong>The important lesson here is the logic of working with loops and randomness.</strong> However, it is important for an instructor or someone creating independently to understand this nuance.
+                
+            </p>
+
+            <h2>Assemble the Solar System with 3D Commands</h2>
+
+            <p>
+                We used a <code>for-loop</code> to fill the lists <code>sizes, planety, planetx, colors</code> with random values to generate our planets with. Now we can use a for loop again to retrieve each value and use
+                them to draw our planets.
+            </p>
+            <div class="text-center my-4">
+                <img src="assets/images/solarsystem/solarsystem_p4.png" alt="draw planets code" class="img-fluid rounded">
+            </div>
+            <p>
+                In this for-loop, <code>i</code> represents each planet, and will <code>index</code> the values which will draw this planet from our lists of random values. In the case that <code>num_planets = 50</code>,
+                a color will be retrieved from <code>colors</code> for each of the 50 planets, using values of <code>i</code> (<code>indexes</code>) 0 to 49.
+                On each <code>iteration</code> of the for-loop <code>rotateY(angle_step)</code> is what rotates the space.<br><br>
+                <code>angle_step</code> is the amount that the space needs to be rotated to distribute each planet equally around the sun.<br><br>
+                <strong>For example, if </strong><code>num_planets = 3</code> :<br>
+                <code>angle = radians(120)</code> (120 degrees)<br><br>
+                Planet 1: <code>i = 0</code>, <code>angle_step = radians(120) * 0</code>, the space is not rotated, equivilant to rotating 360 degrees<br><br>
+                Planet 2: <code>i = 1</code>, <code>angle_step = radians(120) * 1</code>, the space is rotated 120 degrees<br><br>
+                Planet 3: <code>i = 2</code>, <code>angle_step = radians(120) * 2</code>, the space is rotated 240 degrees<br><br>
+
+                <strong>Rotation around the Y axis is what gives our planets their Z position.</strong><br>
+                <code>rotateY()</code> rotates space around the Y axis, like a globe, given the input of an angle in radians. We could also make the space rotate around the X axis, like a bowling ball, using <code>rotateX()</code>
+                When we assigned our planets their random positions we assigned only an X value and a Y value.<br>
+                In 3D the X value is how much the planet "sticks out" from the sun. We've only given them positive values so they only stick out to one side. One reason for this is because if the range of our X values includes
+                values between -100 and 100 planets would be stuck inside the sun. The rotation around the Y axis allows us to distribute planets in all directions despite using only positive X values.<br>
+                If it were not for the 3D rotation, all the planets would be confined to a single 2D slice of space, like in the code below:
+            </p>
+        </div>
+        <iframe 
+            src="https://trinket.io/embed/python/4ca7534b78a3"
+            width="100%" 
+            height="600" 
+            frameborder="0" 
+            marginwidth="0" 
+            marginheight="0" 
+            allowfullscreen>
+        </iframe>
+        <p>
+            Here we see why the order of <code>rotateY()</code> coming before <code>translate(planetx[i], planety[i], 0)</code>. We are rotating the 2D slice where the X and Y values are contained before we move the planet to
+            those X and Y values.<br><br>
+
+            <strong>Now try this!</strong><br>
+            In the code above remove put a <code>#</code> before the lines of code <code>pushMatrix()</code> and <code>popMatrix()</code>. The # will prevent the lines of code from running like removing them would.
+            By taking appart this code you can see that when <code>pushMatrix()</code> and <code>popMatrix()</code> are removed the planets trail off into space.
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/solarsystem/solarsystem_p5.png" alt="planets trailing into space" class="img-fluid rounded">
+        </div>
+        <p>
+            Recall that 3D objects in processing are always drawn at the origin, the point (0, 0, 0) in 3D space. When we use <code>translate(x, y, z)</code> the origin is moved by an amount <code>x, y, z</code> in each direction. The movement is relative to the current position of the origin when translate
+            is called. When we start a project the origin is at (0, 0, 0), but we may move it to the center of the screen using <code>translate(250, 250, 0)</code> (the z position was unchanged).<br>
+            If after this we then call <code>translate(50, 0, 0)</code>, the origin's position relative to the original position will be (200, 250, 0) slightly right of center.<br><br>
+
+            When <code>pushMatrix()</code> is called it saves the position of the origin and the rotation of the space in its current state.<br>
+            When <code>popMatrix()</code> is called it restores the origin and the rotation of the space to what <code>pushMatrix()</code> saved.<br><br>
+
+            So if we perform a translation or rotation between them, <strong>only the shapes that were created inside pushMatrix and popMatrix will be affected by the adjustment of space.</strong> In the case of the planets trailing off into space when we remove pushMatrix and popMatrix, this is because after moving each planet
+            each positive X translation moves the origin farther away from the sun. By performing this translation inside of pushMatrix and popMatrix, the origin is reset to the center of the sun after drawing each planet. <br><br>
+
+            A good approach when teaching is to start with just the translation, without pushMatrix, popMatrix, or rotateY to show how the planets trail off into space and become stuck in a 2D slice. Showing why each command is not only essential for understanding how the code comes together to work, but also is a surprising and entertaining process for learners.<br><br>
+
+            <strong>Finally, on lighting:</strong><br><br>
+
+            Lighting is the last detail to give this project its visual intrigue, and it's simple with a single line of code:<br>
+            <code>pointLight(255, 255, 255, 0, 0, 0)</code><br>
+            pointLight() creates a light at a specific point in space that radiates in all directions. 
+            The first three values are an RGB value. 255, 255, 255 gives you white light which preserves the existing colors. Light of another color will tint all of the shapes effected with that color.<br>
+            The last three values are the x, y, z coordinates of the light.<br><br>
+
+            All light commands in Processing only effect the shapes that are drawn after the light command is called. In this project we call pointLight() after we draw the sun so that the sun is fully lit and only the planets are given shadows, since suns don't have shadows.<br><br>
+
+            pointLight() is one of a few light commands available in processing. I like to use this as an opportunity to introduce the documentation of Processing.py (the python version of Processing), where students can learn about the other kinds of light commands available:<br>
+            https://py.processing.org/reference/ <br><br>
+
+            <strong>Project Complete!</strong><br>
+            Can you think of anything else to do with this project?<br>
+            Like creating a spaceship you can navigate around in this solar system, moving the camera to see its point of view...<br>
+            With more knowledge of coding and Processing you can do all this and more. 
+
+
+
+        </p>
+
+    </div>
+
+
+    
+
+    <footer class="bg-dark text-center text-white py-3">
+        © 2025 Gabriel del Valle Python Creative Curriculum
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

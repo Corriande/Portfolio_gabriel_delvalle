@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+        .home-icon {
+            text-decoration: none;
+            color: white;
+        }
+        .home-icon:hover {
+            color: #ffcc00; /* Highlight color for hover */
+        }
+
+
+        h1 {
+            margin-top: 50px; /* Larger space above h1 */
+            margin-bottom: 40px; /* Larger space below h1 */
+        }
+
+        h2 {
+            margin-top: 50px; /* Smaller space above h2 */
+            margin-bottom: 30px; /* Smaller space below h2 */
+        }
+
+        p {
+            margin-top: 30px; /* Smaller space above h2 */
+            margin-bottom: 30px; /* Smaller space below h2 */
+        }
+
+        .no-bullets {
+            list-style-type: none; /* Removes bullet points */
+            padding-left: 20px;    /* Adds indentation */
+            margin: 0;             /* Removes default margin */
+        }
+
+        .no-bullets li {
+            margin-bottom: 5px;    /* Adds spacing between list items */
+        }
+
+        .indented-text {
+        display: block;     /* Ensures each span starts on a new line */
+        text-indent: 20px;  /* Indents the text */
+        margin-bottom: 0px; /* Optional: Adds spacing between items */
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!-- Home Icon -->
+            <a href="cc_curriculum.html" class="home-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                    <path d="M6.5 10.995V14.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-3.505h3.5a.5.5 0 0 0 .5-.5V7.995l-6-5-6 5v6.5a.5.5 0 0 0 .5.5H6.5z"/>
+                </svg>
+            </a>
+            <span class="navbar-brand ms-3">P4</span>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h1 class="text-center">Typing Game</h1>
+        <!-- Hardcoded iframe for Project 2 -->
+        <iframe src="https://trinket.io/embed/python/9af4caac8b46"
+            width="100%" 
+            height="100%" 
+            frameborder="0" 
+            marginwidth="0" 
+            marginheight="0" 
+            allowfullscreen>
+        </iframe>
+        <h2>An easy game applying strings, lists, and indexes</h2>
+        <p>
+            This game is easy because it is geometrically simple with no collisions or controls needed. This game can be completed in a single lesson and is a great review for a simple but core concept in 
+            programming -- <strong>indexes.</strong><br><br> In the projects which follow this one,  <strong>Object Oriented Programming </strong>, a system for efficiently structuring code and storing data,
+            will be introduced to allow for games with many moving parts.<br><br>
+            I made this game when I realized that for some younger students the amount of typing involved in coding was one of the most common challenges which students improve upon throughout the course. <br><br>
+
+            If you don't already know the basics of lists and indexing, I explain them in the <a href="dreamcatcher.html">Dream Catcher (link)</a> project.
+            
+        </p>
+        <h2>A String is a List for Characters</h2>
+        <p>
+            A <strong>string</strong> is a fundamental data type in coding which stores text, as in any characters you can place between quotation marks.
+            For example: <br> <code>"All of these letters and symbols are characters and are part of this string 123457890!@#$%^&*(),.[]{}"</code><br><br>
+
+            It's called a string because <strong>strings are lists that store a string of characters</strong>. This is one of the core lessons of this project. You can index a string 
+            to retrieve any of the characters stored inside.<br><br>
+
+            For example, if I have a string:<br>
+            <code>my_string = "Strumming the strings of a guitar!"</code><br>
+            <code>my_string[0]</code> give you <code>"S"</code><br>
+            <code>my_string[1]</code> give you <code>"t"</code><br>
+            <code>my_string[9]</code> give you <code>" "</code> (a space)<br>
+            <code>my_string[-1]</code> give you <code>"!"</code> (the last char)<br>
+            <code>my_string[-2]</code> give you <code>"r"</code> (the second to last char)<br>
+            <code>my_string[10:]</code> give you <code>"he strings of a guitar!"</code> (chars after the 10th)<br>
+            <code>my_string[:10]</code> give you <code>"Strumming t"</code> (chars before the 10th)<br>
+            <code>my_string[5:15]</code> give you <code>"ming the s"</code> (between 5 and 15)<br><br>
+
+        </p>
+        <h2>Keyboard Inputs</h2>
+        <p>
+            Processing allows you to define a function <code>keyPressed()</code> which activates whenever a keyboard key is pressed and stores the value of the key that was pressed as the 
+            variable <code>key</code>. This function will be used in the game projects which follow to program all the keyboard controls. <br><br>
+
+            The code below demonstrates the basics principle behind <code>keyPressed()</code>. It will display each letter you type, but each time you type a key the previous key will be replaced. This is because the value of <code>just_typed</code> is reassigned to the value of <code>key</code> each time. <br><br>
+
+            If you hit the arrow keys, SHIFT, or command key, the value displayed will be <code>65535</code>, stored as an integer rather than a string. This value represents the coded keys, or non charachter keys.
+            In our game when we identify if you typed the correct key or not, we will need to make an exception for this coded key value so it doesn't count <code>65535</code> as an incorrect key when you hit SHIFT
+            for a capital letter.<br><br>
+
+            Text is written on the canvas using the <code>text()</code> command which takes as inputs a string, an X value, and a Y value. The text size is set before the text is drawn using <code>textSize()</code>.<br><br>
+
+
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/typinggame/typinggame_p1.png" alt="keypressed basics" class="img-fluid rounded">
+        </div>
+        <p>
+            <strong>Adding strings</strong><br>
+            In order to make it so that we can store and display more than one charachter at a time in <code>just_typed</code>, we can add the value of <code>key</code> to <code>just_typed</code> instead of replacing the previous value each time a key is pressed:<br>
+            <code>just_typed = just_typed + key</code>
+        </p>
+        <h2>Main Game Mechanics</h2>
+        <p>
+            <ul>
+                <li>Show correct letters in green and errors in red</li>
+                <li>else and elif</li>
+                <li>Queue words to spell</li>
+                <li>Create a timer</li>
+            </ul>
+        </p>
+       <iframe src="https://trinket.io/embed/python/670651647c13"
+        width="100%" 
+        height="100%" 
+        frameborder="0" 
+        marginwidth="0" 
+        marginheight="0" 
+        allowfullscreen>
+        </iframe>
+        <p>The code above will let you type through all the words in the list, but give you an error on the last letter of the last word.</p>
+        <h4>Fill correct letters green</h4>
+        <p>
+            The interactive code above will fill green each correctly typed letter in the current word to type. White text displays <code>current_word</code>, and the green text displays <code>have_typed</code> which contains the letters correctly typed. Two different <code>text()</code> commands display 
+            each string, but <strong>because the two text commands have the same X and Y position inputs, the letters fit perfectly over each other.</strong><br><br> 
+
+            We check if the typed key is the correct one with this line of code:<br> 
+            <code>if key == current_letter:</code><br>
+            In this code the double equal signs <code>==</code> is different than the single equal sign we use to assign a variable a value. With two equal signs we are not telling the computer the value of a variable, but <strong>asking</strong> if the variable value is equal to another value.
+        </p>
+        <h4>Plan B and Plan C with <code>else</code> and <code>elif</code></h4>
+        <p>
+
+            When a correct key is typed, the if-statement <code>if key == current_letter</code> is true.
+
+           <strong>When this condition is not met, we know an incorrect letter has been typed.</strong> To make something happen when the condition in an if-statement was not met (such as increasing our error count), we use <strong><code>else:</code></strong>, which is like a plan B added to the if-statement if plan A doesn't happen.<br><br>
+           The "e" of <code>else:</code> should be lined up with the "i" of <code>if</code> above it for proper alignment.
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/typinggame/typinggame_p5.png" alt="use of else" class="img-fluid rounded">
+        </div>
+
+        <p>
+            In the example above we also see the use of <code>elif</code>, which is an <code>else</code> combined with an if-statement.<br><br>
+            If the first if-statement is true, the instructions inside the if will execute and the <code>elif</code> and <code>else</code> will be skipped.<br><br>
+            If the first if-statement is not true, the <code>elif</code> will be checked next as plan B. If the <code>elif</code> is true the code inside will execute and the <code>else</code> will be skipped.<br><br>
+            If the first if-statement and the <code>elif</code> are both not true the <code>else</code> will activate as plan C.
+        </p>
+        <h4>Showing errors in red and making them go away</h4>
+        <p>
+            If the typed key does not equal <code>current_letter</code> we want to count an error and assign the value of key to the variable <code>wrong_key</code> for display. However, remember that the SHIFT key is encoded as <code>65535</code>. We don't want to count 
+            the SHIFT key as an error as it's needed to type capital letters. <br><br>
+
+            So, in the code below, <code>elif key != 65535</code> will activate as plan B if the typed key does not equal <code>current_letter</code>, but only if the key does not also equal <code>65535</code>. <br><br>
+
+            In coding, the logical phrase "does not equal" can be expressed as <code>!=</code>. In coding, an exclamation point <code>!</code> generally represents "not". <br><br>
+
+            When a key is typed correctly, <code>wrong_key = ""</code> will set <code>wrong_key</code> to an empty string, erasing previous error values and displaying no errors on the canvas.
+        </p>
+
+
+
+        <div class="text-center my-4">
+            <img src="assets/images/typinggame/typinggame_p4.png" alt="display errors" class="img-fluid rounded">
+        </div>
+        <p>
+            An incorrectly typed key will be displayed in red, beneath the word to type, from the following code in the draw function:<br>
+            <code>fill(255, 0, 0)</code> set color to red<br>
+            <code>text(wrong_key, 100, 200)</code>
+        </p>
+        <h4>Queue the next words to solve index error</h4>
+        <p>
+            The interactive code above will let you type through every word in the list <code>words_to_type</code> until you try to type the last letter of the last word and receive an <strong>index error</strong>. <br><br> 
+            Just like with lists, if you try to index a value that doesn't exist from a string you will get an index error, when the index is greater than or equal to the length of the list minus 1.<br><br>
+            
+            We get this error on the final letter because <code>letter_index</code> is increased to queue the next letter when we correctly type the last letter, but there are no more letters. What we need at this point is the next word. <br><br>
+            
+            <strong>Check the length of a string or list</strong><br>
+            To avoid this it's useful to know how to check the length of a string, or any list:<br>
+            <code>len()</code> is a built in Python command to return the length of a string or list:<br>
+            <code>len(my_string[10:15])</code> gives you 10 for the length of "ming the s"<br><br>
+            
+            <strong>Challenge question</strong><br>
+            Can you fix the keyPressed function in the interactive code above to queue the next word and avoid the error?
+        </p>
+        <h4>Below is the solution for how to queue the next word and avoid the list index error.</h4>
+        <p>
+            With the adjustment displayed below you can type through every word in the list of <code>words_to_type</code>, until you reach the last letter of the last word, where you will get an index error because you are out of words.<br><br>
+
+            <code>word_index</code> is increased to queue the next word, <code>letter_index</code> is returned to 0 to index the first letter of the next word, and <code>have_typed</code> is set to an empty string to clear it of the previous typed values.
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/typinggame/typinggame_p2.png" alt="next word solution" class="img-fluid rounded">
+        </div>
+        <p>
+            <strong>On global values</strong><br>
+            For the code above, remember that since <code>word_index</code>, <code>letter_index</code>, and <code>have_typed</code> are being altered in the draw function they need to be declared as global. This is the opposite reason why <code>current_letter</code> and <code>current_word</code> 
+            are declared global in the draw function. <code>current_letter</code> and <code>current_word</code> were defined inside the draw function but needed to be declared global so that they could be accessed outside of the draw function in the keyPressed function.
+        </p>
+        <h4>Timer in Milliseconds</h4>
+        <p>
+            Using the Processing function <code>millis()</code>, each time the draw function loops <code>current_time = millis()</code> will update to represent the number of milliseconds that have passed since the code was started. <code>current_time</code> is a <strong>float</strong>, a numeric data type that stores decimal numbers.<br><br>
+
+            <strong>Rounding to whole seconds</strong><br>
+            To convert milliseconds to seconds we can of course divide <code>current_time</code> by 1000, but this would still leave us with a quickly changing decimal that would be busy and distracting to display on the screen. We can fix this to only display integer (whole number) seconds in two ways:<br><br>
+            1. <code>round(x)</code> will round a given float x to an integer<br>
+            2. <code>seconds_timer = current_time // 1000</code> double slashes <code>//</code> perform integer division, giving us only whole numbers.<br><br>
+
+            <strong>Display the Time</strong><br>
+
+            We learned earlier that you can add two strings to combine them. In the code below we are adding <code>current_time</code> in whole seconds to the label <code>"Time: "</code> with a space included. However, <code>current_time</code> is a numeric data type. <strong>A numeric data type can't be added to a string, unless we first convert it to a string</strong>.<br><br>
+            <code>str(x)</code> converts a given input x into a string.
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/typinggame/typinggame_p3.png" alt="Timer text" class="img-fluid rounded">
+        </div>
+        <h2>Game Over Screen</h2>
+        <p>
+            Finally, to finish this game we simply need to recognize when we have typed all of the words successfully and avoid the index error that occurs when typing the last letter of the last word by switching to a game over screen.<br><br>
+
+            This index error on the last error occurs because <code>word_index</code> is greater than the number of items in the list <code>words_to_type</code> when we index the current word using:<br>
+            <code>current_word = words_to_type[word_index]</code><br><br>
+
+            We can avoid the error by adding the following if-statement before <code>current_word</code> is defined in the draw function:<br><br>
+            <code>if word_index < len(words_to_type):</code><br><br>
+
+            All of the code in the draw function responsible for the game play should be moved inside this if-statement, so that when we are out of words the gameplay elements will stop so we can switch to the game over screen. <strong>To easily space forwards many lines of code, highlight the lines of code and press TAB</strong>.<br><br>
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/typinggame/typinggame_p6.png" alt="Check if game completed" class="img-fluid rounded">
+        </div>
+        <p>
+            Now when you reach the end of the list of words you will see a blank screen, unless we add a plan B to the condition <code>if word_index < len(words_to_type):</code>. We learned we can do this with an <code>else</code> attatched to this if-statement. Whatever we want to display in the game over screen should go in this else.
+        </p>
+        <div class="text-center my-4">
+            <img src="assets/images/typinggame/typinggame_p7.png" alt="Game over else" class="img-fluid rounded">
+        </div>
+        <p>
+            You can see in the code above that to add the numeric stats of the player such as words per second or words typed to labels and display them as text we again need to convert numeric values to strings using <code>str()</code>. <br><br>
+
+            Finally, after displaying the game over screen, to avoid the timer to continue to count and to avoid the stats changing from further typing, we can stop the code from running using <code>exit()</code>. This works like the opposite of <code>run()</code> and should always be the very last thing your code does as no other code can run after it has been called.<br><br>
+
+            <strong>Congratulations on completing another project! Continue on to learn how to make more intricate games!</strong>
+        </p>
+
+
+
+
+
+
+
+
+    </div>
+
+    <footer class="bg-dark text-center text-white py-3">
+        © 2025 Gabriel del Valle Python Creative Curriculum
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
