@@ -185,11 +185,10 @@
                 before filling it with information than to use <code>append()</code> to add each item. 
             </p>
             <p>
-                <strong>Advanced Topic:</strong>
-                This is because when python compiles code for the computer to execute, 
-                it can efficiently allocate memory to calculating a loop when the size of the elements involved is already known. 
-                If the size of a list changes throughout the execution of a loop, reallocating the size of the list in the memory 
-                creates extra computational steps on each cycle of the loop.
+                <strong>Advanced Topic:</strong><br>
+                Python automatically manages memory, so programmers don’t need to manually allocate it like in lower-level languages such as C or C++. 
+                Instead, Python dynamically adjusts memory as needed to ensure the code runs smoothly. However, when a list grows dynamically using <code>.append()</code>, Python may need to allocate a new, larger memory block and copy the existing data into it. 
+                This can add extra computational steps, especially in loops. By preallocating a list, we help Python avoid frequent memory reallocations and improve efficiency.
             </p>
 
             <h2>Looping through Lists</h2>

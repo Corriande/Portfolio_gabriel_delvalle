@@ -13,9 +13,16 @@
         .section {
             margin: 50px 0;
         }
+        .card {
+            transition: transform 0.3s ease-in-out;
+        }
         .card:hover {
             transform: scale(1.05);
-            transition: 0.3s ease-in-out;
+        }
+        /* Remove underline and set default color for the card links */
+        .card-link {
+            text-decoration: none;
+            color: inherit; /* Keeps default text color */
         }
         .footer {
             background-color: #212529;
@@ -36,11 +43,7 @@
     <!-- About Section -->
     <section class="section text-center">
         <div class="container">
-            <h2>About Me</h2>
-            <p>
-                Hi, I'm Gabriel del Valle! I specialize in teaching Python through interactive projects and building 
-                data-driven solutions using Data Science. Explore the sections below to view my work and projects.
-            </p>
+            <h2>www.linkedin.com/in/gabrielxdelvalle</h2>
         </div>
     </section>
 
@@ -50,25 +53,27 @@
             <div class="row">
                 <!-- Creative Coding Section -->
                 <div class="col-md-6 mb-4">
-                    <div class="card text-center shadow">
-                        <img src="assets/images/pcc_cardcovers/gridwave.png" class="card-img-top" alt="Creative Coding">
-                        <div class="card-body">
-                            <h5 class="card-title">Creative Coding Python Curriculum</h5>
-                            <p class="card-text">A guide to the creative projects I've developed to teach Python to beginners.</p>
-                            <a href="cc_curriculum.html" class="btn btn-primary">Explore Python Cirriculum</a>
+                    <a href="cc_curriculum.html" class="card-link">
+                        <div class="card text-center shadow">
+                            <img src="assets/images/pcc_cardcovers/gridwave.png" class="card-img-top" alt="Creative Coding">
+                            <div class="card-body">
+                                <h5 class="card-title">Creative Coding Python Curriculum</h5>
+                                <p class="card-text">A guide to the creative projects I've developed to teach Python to beginners.</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
                 <!-- Data Science Section -->
                 <div class="col-md-6 mb-4">
-                    <div class="card text-center shadow">
-                        <img src="assets/images/ds_cardcovers/map_bar.png" class="card-img-top" alt="Data Science">
-                        <div class="card-body">
-                            <h5 class="card-title">Data Science Projects</h5>
-                            <a href="datascience.html" class="btn btn-primary">Explore Data Science</a>
+                    <a href="datascience.html" class="card-link">
+                        <div class="card text-center shadow">
+                            <img src="assets/images/ds_cardcovers/map_bar.png" class="card-img-top" alt="Data Science">
+                            <div class="card-body">
+                                <h5 class="card-title">Data Science Projects</h5>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -84,4 +89,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-

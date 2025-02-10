@@ -163,19 +163,19 @@
             </div>
             <p>
                 Like in <strong>Dream Catcher</strong>, we define a set of lists to be the right size to store a random value, based on the variable <code>num_planets</code>.
-                These lists are first defined in the <code>global context</code>, which like the setup function only runs once. In the setup function when we write the line:<br>
-                <code>global sizes, planety, planetx, colors</code> <br>We are adding or accessing variables to the global context, which lets them be used in any part of our code.<br><br>
+                These lists are first defined in the <code>global scope</code>, which like the setup function only runs once. In the setup function when we write the line:<br>
+                <code>global sizes, planety, planetx, colors</code> <br>We are adding or accessing variables to the global scope, which lets them be used in any part of our code.<br><br>
 
                 Another variable we've defined in the setup function is <code>angle</code> which is how much we will rotate each planet around the sun. By dividing 360 by num_planets we 
                 give each planet its own position around the sun, making the composition look balanced and avoiding overlap between planets. We only need to calculate this once.<br><br>
 
                 <strong>Here comes some nuance...</strong><br>
 
-                A function like setup or draw is not initially connected to the global context. Any variables created inside setup will be assumed to be its own unique entity,
-                even if a variable of that name exists in the global context. That means if we want to assign random values to our lists in the setup function, we need to declare each
-                list <code>global</code> in the setup function, this way python recognizes the lists in the setup function as the same lists in the global context. <br><br>
+                A function like setup or draw is not initially connected to the global scope. Any variables created inside setup will be assumed to be its own unique entity,
+                even if a variable of that name exists in the global scope. That means if we want to assign random values to our lists in the setup function, we need to declare each
+                list <code>global</code> in the setup function, this way python recognizes the lists in the setup function as the same lists in the global scope. <br><br>
 
-                If that's the case then why not define the random values in the global context? Good point! We could run a for-loop in the global context and define our random values there.
+                If that's the case then why not define the random values in the global scope? Good point! We could run a for-loop in the global scope and define our random values there.
                 <strong>However</strong>, the thing stopping us from doing that is a nuance of the processing library. Processing commands such as:<br>
                 <code>ellipse()</code> draw a circle<br>
                 <code>fill()</code> draw a color<br>
@@ -241,7 +241,7 @@
         <p>
             Recall that 3D objects in processing are always drawn at the origin, the point (0, 0, 0) in 3D space. When we use <code>translate(x, y, z)</code> the origin is moved by an amount <code>x, y, z</code> in each direction. The movement is relative to the current position of the origin when translate
             is called. When we start a project the origin is at (0, 0, 0), but we may move it to the center of the screen using <code>translate(250, 250, 0)</code> (the z position was unchanged).<br>
-            If after this we then call <code>translate(50, 0, 0)</code>, the origin's position relative to the original position will be (200, 250, 0) slightly right of center.<br><br>
+            If after this we then call <code>translate(50, 0, 0)</code>, the origin's position relative to the original position will be (300, 250, 0) slightly right of center.<br><br>
 
             When <code>pushMatrix()</code> is called it saves the position of the origin and the rotation of the space in its current state.<br>
             When <code>popMatrix()</code> is called it restores the origin and the rotation of the space to what <code>pushMatrix()</code> saved.<br><br>

@@ -126,7 +126,7 @@
             </iframe>
             <p>
                 Each project made with Processing will start with the same basic template, pictured below.<br>
-                First we import the library so we can use it. The * denotes we want the entire library.<br>
+                First we import the library so we can use it. The <code>*</code> denotes we want the entire library.<br>
                 <code>from processing import*</code><br>
                 The Processing library expects the <code>setup()</code> and <code>draw()</code> functions in order to work. In coding, a <code>function</code> can be called to activate the code inside.<br>
                 When you hit the play button to run your code <code>setup()</code> run once at the beginning and <code>draw()</code> will continue to run until stopped, an infinite loop.
@@ -169,93 +169,94 @@
                 Whenever you think you see yellow on a computer screen, this is what is really there.<br>
                 <code>color(255, 255, 0)</code> 
             </p>
-            <div class="text-center my-4">
-                <img src="assets/images/firstsketch/rgbpixels2.png" alt="rgb yellow visual" class="img-fluid rounded">
+            <img src="assets/images/firstsketch/rgbpixels2.png" alt="rgb yellow visual" class="img-fluid rounded">
             </div>
-            <p>
-                When each RGB value is the same, for example <code>color(100, 100, 100)</code>, the color is on the greyscale. If we input a single number as a color, processing will interpret it as greyscale:<br>
-                <code>color(0)</code> gives black <br>
-                <code>color(100)</code> gives grey <br>
-                <code>color(200)</code> gives light grey <br>
-                <code>color(255)</code> gives white <br><br>
+            <div class="my-4">
+                
+                <p>
+                    When each RGB value is the same, for example <code>color(100, 100, 100)</code>, the color is on the greyscale. If we input a single number as a color, processing will interpret it as greyscale:<br>
+                    <code>color(0)</code> gives black <br>
+                    <code>color(100)</code> gives grey <br>
+                    <code>color(200)</code> gives light grey <br>
+                    <code>color(255)</code> gives white <br><br>
 
-                RGB colors can also be made easily accessible to anyone using Google's colorpicker tool.
-            </p>
-            <div class="text-center my-4">
-                <img src="assets/images/firstsketch/colorpicker.png" alt="color picker" class="img-fluid rounded">
+                    RGB colors can also be made easily accessible to anyone using Google's colorpicker tool.
+                </p>
+                <div class="text-center my-4">
+                    <img src="assets/images/firstsketch/colorpicker.png" alt="color picker" class="img-fluid rounded">
+                </div>
+                <p>
+                    Have students customize their favorite color by positioning the two circular sliders to adjusting the brightness and hue. Then they can copy the RGB values from the table in the bottom left into their code.
+                </p>
+                <h2>Draw a Shape</h2>
+                <p>
+                    You'd be surprised by how many creative projects you can make using just ovals, rectangles, lines, and curves. These are the 2D shapes Processing gives us commands to draw, unless you define your own shapes using more advanced techniques.<br><br>
+
+                    <code>ellipse()</code> draws circles and ovals, takes as input: x position, y position, width, height.<br><br>
+
+                    To draw a red circle in the middle of the screen:
+                </p>
+                <div class="text-center my-4">
+                    <img src="assets/images/firstsketch/firstshape.png" alt="first shape" class="img-fluid rounded">
+                </div>
+                <p>
+                    Notice that in this example the X and Y value for the center of the canvas is (250, 250). It's common to expect the center of a canvas to be (0, 0), but <strong>in Processing the <code>origin (point 0, 0)</code> of the canvas is the top left corner.</strong><br><br>
+
+                    This means in the example where the size is set to (500, 500) that:<br>
+                    The point (500, 0) is the top right corner <br>
+                    The point (0, 500) is the bottom left corner <br>
+                    The point (500, 500) is the bottom right corner<br><br>
+                    <strong>This means that the Y axis is upside down. To move down the canvas you increase Y. To move upt the canvas you increase Y.</strong><br>
+                    I consider this to be the most confusing aspect of Processing, but it's easy enough to remember. <br><br>
+
+                    <code>rect()</code> draws rectangles and takes the same inputs as <code>ellipse(x, y, width, height)</code>
+                </p>
+                <div class="text-center my-4">
+                    <img src="assets/images/firstsketch/firstshape2.png" alt="first shape 2" class="img-fluid rounded">
+                </div>
+                <p>
+                    Notice that the point of the rectangle that is at the center of the canvas is the top left corner. This is the default position for the X and Y value of a rectangle in Processing, while for an ellipse it is the center of the shape. When working with rectangle's I prefer to 
+                    set the X and Y value to the center of the rectangle by adding the following command to the setup function:<br><br>
+                    <code>rectMode(CENTER)</code>
+                </p>
+                <h2>Repetition with Loops</h2>
+                <p>
+                    So far we've made a single shape. Now let's make many. <br><br>
+
+                    <code>for i in range(x):</code> creates a for-loop that will repeat whatever is inside x many times. Remember for that a line of code to be "inside" another in Python, we space the inside code forwards.
+                </p>
+                <div class="text-center my-4">
+                    <img src="assets/images/firstsketch/firstloop.png" alt="first loop" class="img-fluid rounded">
+                </div>
+                <p>
+                    However, if we run the code above, we will see no difference from the single circle we drew before. The loop did draw 15 circles, but because the X and Y coordinates of the circle do not changed, each is exactly on top of the other.<br><br>
+
+                    To create a change on each repetition of the loop, we can use the <code>temporary variable</code>. The temporary variable, which in this code we called <code>i</code>, could be given any name. The temporary variable in a for loop is often assigned to keep track of the number of loops, using <code>i</code>
+                </p>
+                <p><code>for i in range(10):</code><br>
+                    <span class="indented-text"><code>print(i)</code></span>
+                </p>
+                <p>This will give you:<br>
+                    <ul class="no-bullets">
+                        <li>0</li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                        <li>7</li>
+                        <li>8</li>
+                        <li>9</li>
+                    </ul>
+
+                    <code>range()</code> is a python command that will create a list of numbers. When a single number <code>x</code> is input into 
+                    <code>range()</code>, the list of numbers will start at 0 and count up to <code>x-1</code>, creating a list the size of <code>x</code>. A <code>for-loop</code> will loop through each item in a list, assigning each item to the temporarry variable<br><br>
+                    Notice the range counts up to <code>x-1</code> because it starts counting from 0. <br><br>
+
+                    Since <code>i</code> changes on every cycle, we can use <code>i</code> to produce a different outcomes throughout our loop.
+                </p>
             </div>
-            <p>
-                Have students customize their favorite color by positioning the two circular sliders to adjusting the brightness and hue. Then they can copy the RGB values from the table in the bottom left into their code.
-            </p>
-            <h2>Draw a Shape</h2>
-            <p>
-                You'd be surprised by how many creative projects you can make using just ovals, rectangles, lines, and curves. These are the 2D shapes Processing gives us commands to draw, unless you define your own shapes using more advanced techniques.<br><br>
-
-                <code>ellipse()</code> draws circles and ovals, takes as input: x position, y position, width, height.<br><br>
-
-                To draw a red circle in the middle of the screen:
-            </p>
-            <div class="text-center my-4">
-                <img src="assets/images/firstsketch/firstshape.png" alt="first shape" class="img-fluid rounded">
-            </div>
-            <p>
-                Notice that in this example the X and Y value for the center of the canvas is (250, 250). It's common to expect the center of a canvas to be (0, 0), but <strong>in Processing the <code>origin (point 0, 0)</code> of the canvas is the top left corner.</strong><br><br>
-
-                This means in the example where the size is set to (500, 500) that:<br>
-                The point (500, 0) is the top right corner <br>
-                The point (0, 500) is the bottom left corner <br>
-                The point (500, 500) is the bottom right corner<br> 
-                <strong>This means that the Y axis is upside down. To move down the canvas you increase Y. To move upt the canvas you increase Y.</strong><br>
-                I consider this to be the most confusing aspect of Processing, but it's easy enough to remember. <br><br>
-
-                <code>rect()</code> draws rectangles and takes the same inputs as <code>ellipse(x, y, width, height)</code>
-            </p>
-            <div class="text-center my-4">
-                <img src="assets/images/firstsketch/firstshape2.png" alt="first shape 2" class="img-fluid rounded">
-            </div>
-            <p>
-                Notice that the point of the rectangle that is at the center of the canvas is the top left corner. This is the default position for the X and Y value of a rectangle in Processing, while for an ellipse it is the center of the shape. When working with rectangle's I prefer to 
-                set the X and Y value to the center of the rectangle by adding the following command to the setup function:<br>
-                <code>rectMode(CENTER)</code>
-            </p>
-            <h2>Repetition with Loops</h2>
-            <p>
-                So far we've made a single shape. Now let's make many. <br><br>
-
-                <code>for i in range(x):</code> creates a for-loop that will repeat whatever is inside x many times. Remember for that a line of code to be "inside" another in Python, we space the inside code forwards.
-            </p>
-            <div class="text-center my-4">
-                <img src="assets/images/firstsketch/firstloop.png" alt="first loop" class="img-fluid rounded">
-            </div>
-            <p>
-                However, if we run the code above, we will see no difference from the single circle we drew before. The loop did draw 15 circles, but because the X and Y coordinates of the circle do not changed, each is exactly on top of the other.<br><br>
-
-                To create a change on each repetition of the loop, we can use the <code>temporary variable i</code>. The temporary variable, which in this code we called i, could be given any name. The temporary variable in a for loop is often assigned to keep track of the number of loops, using <code>i</code>
-            </p>
-            <p><code>for i in range(10):</code><br>
-                <span class="indented-text"><code>print(i)</code></span>
-            </p>
-            <p>This will give you:<br>
-                <ul class="no-bullets">
-                    <li>0</li>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
-                    <li>6</li>
-                    <li>7</li>
-                    <li>8</li>
-                    <li>9</li>
-                </ul>
-
-                <code>range()</code> is a python command that will create a list of numbers. When a single number <code>x</code> is input into 
-                <code>range()</code>, the list of numbers will start at 0 and count up to <code>x-1</code>, creating a list the size of <code>x</code>. A <code>for-loop</code> will loop through each item in a list, assigning each item to the temporarry variable<br><br>
-                Notice the range counts up to <code>x-1</code> because it starts counting from 0. <br><br>
-
-                Since <code>i</code> changes on every cycle, we can use <code>i</code> to produce a different outcomes throughout our loop.
-
-            </p>
             <div class="text-center my-4">
                 <img src="assets/images/firstsketch/firstsketch_p4.png" alt="loop with changes" class="img-fluid rounded">
             </div>
@@ -314,8 +315,8 @@
                 <strong>Now here's an important nuance.</strong> Why did we define <code>move_y = 0</code> outside the draw function? Remember that as the draw function loops each command inside of it will be called from top to bottom. If we start the draw function with <code>move_y = 0</code>,
                 and then we try to increase its value at the end of the loop with <code>move_y += 1</code>, when the loop completes and we return to the top of the draw function for another cycle, <code>move_y = 0</code> would be called again, erasing any change over time we hoped to create.<br><br>
 
-                Thus, we define <code>move_y = 0</code> in the <strong>global space</strong> (outside any function) where it will only be called once when the code is first run. However, when we define a function in Python, it assumes each variable inside of it is unique unless explicitly told otherwise.
-                This is why we've added to the draw function <code>global move_y</code>, which specifies that the <code>move_y</code> variable in the draw function is the same variable in the global space. We need to add this to any function where we intend to change the value of <code>move_y</code>, but it is only necessary
+                Thus, we define <code>move_y = 0</code> in the <strong>global scope</strong> (outside any function) where it will only be called once when the code is first run. However, when we define a function in Python, it assumes each variable inside of it is unique unless explicitly told otherwise.
+                This is why we've added to the draw function <code>global move_y</code>, which specifies that the <code>move_y</code> variable in the draw function is the same variable in the global scope. We need to add this to any function where we intend to change the value of <code>move_y</code>, but it is only necessary
                 to add to a function if you intend to change the value of the variable in that function. <br><br>
 
                 <strong>Now the circle moves down, but it also disappears below the canvas, falling forever. Now what?</strong><br><br>
@@ -333,7 +334,7 @@
 
                 Since <code>move_y += 1</code> made the sun move down, it should be simple to recognize that the opposite of this, subtracting one on each loop with <code>move_y -= 1</code> what make the sun move up. <br><br>
 
-                However, we cannot change <code>+=</code> to <code>-=</code> in the middle of our code running.
+                However, we cannot change <code>+=</code> to <code>-=</code> in the middle of our code running.<br><br>
 
                 What we can do is replace the static number <code>1</code> with a variable such as <code>pos_min</code> that can have its value changed whenever we please to 1 or -1, allowing us to increase or decrease the value of move_y with <code>move_y += pos_min</code><br><br>
 
@@ -341,7 +342,7 @@
 
                 "If you listen, then you will learn".<br><br>
 
-                This is an exmaple of a conditional statement I provide to students. We know in this statement that <code>"you will learn"</code> will only happen <code>"If you listen"</code>.<br><br>
+                This is an exmaple of a <strong>conditional statement</strong> I provide to students. We know in this statement that <code>"you will learn"</code> will only happen <code>"If you listen"</code>.<br><br>
 
                 <code>if-statements</code> let us specify when we want something to happen. In this case we want the sun to switch directions to rise when it reaches below the canvas and switch directions to descend when it reaches above the canvas. We know that we can do this by changing
                 <code>pos_min = -1</code> and <code>pos_min = 1</code> respectively. So let's bring it all together:
